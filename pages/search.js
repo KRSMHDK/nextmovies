@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-
+import SearchResults from '../components/search/search-results'
 function search() {
   const [results, setResults] = useState(null)
 
@@ -18,12 +18,9 @@ function search() {
     return <div> </div>
   }
   return (
-    <div>
-      {console.log(results)}
-      {results.data.results.map((r) => (
-        <p key={r.id}>{r.title}</p>
-      ))}
-    </div>
+    <>
+      <SearchResults results={results} />
+    </>
   )
 }
 
