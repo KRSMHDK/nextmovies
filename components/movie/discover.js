@@ -37,14 +37,14 @@ function Discover() {
           </p>
           <form onSubmit={handleSearch}>
             <input
-              className='border-2 mt-10 ml-10  h-10  rounded-full w-9/12 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+              className='border-2 mt-10 ml-10  h-10  rounded-l-lg w-9/12 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
               id='Movie'
               type='text'
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder='Search for a movie'
             />
-            <button class='bg-blue-500 inline hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
+            <button className='bg-blue-500 inline hover:bg-blue-400 text-white font-bold py-2 px-5 rounded-r-full'>
               Search
             </button>
           </form>

@@ -11,16 +11,8 @@ function MainHeader() {
       </div>
       <div className='w-full block lg:flex lg:items-center lg:w-auto lg:flex-grow items-center text-xl text-white'>
         <Link href='/'>
-          <a className='block  mr-4'>Movies List</a>
+          <a className='block text-base mr-4'>Movies</a>
         </Link>
-        <div className='ml-10 text-lg flex items-center '>
-          <input
-            className='  border-2 border-red-600 rounded w-full px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-            id='Movie'
-            type='text'
-            placeholder='Search Movie'
-          />
-        </div>
       </div>
     </nav>
   )

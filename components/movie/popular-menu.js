@@ -1,23 +1,39 @@
 import React, { useState, useEffect } from 'react'
 import MovieList from './movie-list'
 
-function PopularMenu({ popular, toprated, upcoming }) {
-  const [Movies, setMovies] = useState(popular)
+function PopularMenu() {
+  const [Movies, setMovies] = useState(null)
+
+  useEffect(() => {
+    const fetchResults = async () => {
+      const res = await fetch(`/api/popular-movie`)
+      const data = await res.json()
+
+      setMovies(data.data)
+    }
+    fetchResults()
+  }, [])
 
   const handlePopularChange = async () => {
-    setMovies(popular)
+    const res = await fetch(`/api/popular-movie`)
+    const data = await res.json()
+    setMovies(data.data)
   }
 
   const handleTopRatedChange = async () => {
-    setMovies(toprated)
+    const res = await fetch(`/api/top-rated`)
+    const data = await res.json()
+    setMovies(data.data)
   }
 
   const handleUpcomingChange = async () => {
-    setMovies(upcoming)
+    const res = await fetch(`/api/upcoming-movie`)
+    const data = await res.json()
+    setMovies(data.data)
   }
 
   if (Movies === null) {
-    return <div>loading </div>
+    return <div></div>
   }
 
   return (
