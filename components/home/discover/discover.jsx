@@ -45,8 +45,8 @@ function Discover() {
               placeholder="Search for a movie"
             />
             <button
-              type="button"
-              className="bg-blue-500 inline-flex cursor-pointer hover:bg-blue-400 text-white font-bold py-2 px-5 rounded-r-full"
+              type="submit"
+              className="bg-blue-500  inline-flex cursor-pointer hover:bg-blue-400 text-white font-bold py-2 px-5 rounded-r-full"
             >
               Search
             </button>
