@@ -38,20 +38,20 @@ function PopularMenu() {
 
   return (
     <>
-      <div className="flex mx-auto max-w-screen-xl  pl-5 pr-14 mt-5">
+      <div className="group md:flex inline-block  relative mx-auto max-w-screen-xl  pl-5 pr-14 mt-5">
         <p className="text-black bold whitespace-nowrap text-2xl">What&apos;s Popular</p>
-        <ul className="border-2 whitespace-nowrap border-black ml-5 py-1 px-2  rounded-full ">
-          <li className="inline mr-4 active:bg-green-700">
+        <ul className="    group-hover:block hidden border-2 whitespace-nowrap border-black ml-5 py-1 px-2  rounded-lg md:rounded-full ">
+          <li className="md:inline mr-4 active:bg-green-700">
             <button type="button" value="popular" onClick={handlePopularChange}>
               Popular
             </button>
           </li>
-          <li className="inline mr-4">
+          <li className="      md:inline mr-4">
             <button type="button" value="TopRated" onClick={handleTopRatedChange}>
               Top Rated
             </button>
           </li>
-          <li className="inline">
+          <li className="  group-hover:block md:inline">
             <button type="button" value="upcoming" onClick={handleUpcomingChange}>
               Upcoming
             </button>

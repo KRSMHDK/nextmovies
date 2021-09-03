@@ -34,7 +34,7 @@ function PopularTrailer() {
   return (
     <div>
       <div
-        className="bg-cover  bg-no-repeat mx-72 h-80 "
+        className="bg-cover  mx-auto max-w-screen-xl bg-no-repeat  h-80 "
         style={{
           backgroundImage:
             'url("https://www.themoviedb.org/t/p/w1920_and_h427_multi_faces/4N6zEMfZ57zNEQcM8gWeERFupMv.jpg")',
