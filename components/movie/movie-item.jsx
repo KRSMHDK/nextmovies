@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
+// eslint-disable-next-line no-unused-vars
 function EventItem({ moviedetails, movieyoutube }) {
   function timeConvert(n) {
     const num = n;
@@ -14,22 +15,28 @@ function EventItem({ moviedetails, movieyoutube }) {
   return (
     <div>
       <div
-        className="bg-cover bg-no-repeat  mt-5 "
+        className="bg-cover  mx-auto w-full bg-no-repeat  mt-5 "
         style={{
           backgroundImage: `url('https://image.tmdb.org/t/p/w1280${moviedetails.backdrop_path}')`,
         }}
       >
-        <div className="flex pt-12 pb-12 bg-black bg-opacity-70">
-          <div className="flex-none">
+        <div className="lg:flex lg:pt-12 pb-12    bg-black bg-opacity-70">
+          <div className="text-white mx-auto relative flex bg-blue-500 ">
             <img
-              className=" border-black rounded-3xl ml-64 w-64 h-96 "
+              className=" border-black ml-5 mt-5 z-20 absolute rounded-2xl  w-20 h-30 "
               src={`https://image.tmdb.org/t/p/w500${moviedetails.poster_path}`}
               alt={moviedetails.title}
             />
+            <div className="bg-gradient-to-r from-black inset-0   absolute z-10 w-full " />
+            <img
+              className="w-full h-40 zbg-grey-900 bg-opacity-75"
+              src={`https://image.tmdb.org/t/p/w1280${moviedetails.backdrop_path}`}
+              alt=""
+            />
           </div>
 
-          <div className=" ml-5 mt-7 mr-96 flex-initial text-white">
-            <p className="text-4xl mb-2">
+          <div className=" ml-5 mt-7 flex-initial text-white">
+            <p className="md:text-4xl text-center text-lg mb-2">
               {moviedetails.title}
               {moviedetails.release_date}
             </p>
@@ -57,7 +64,7 @@ function EventItem({ moviedetails, movieyoutube }) {
           </div>
         </div>
       </div>
-      {movieyoutube.results[0] && (
+      {/* {movieyoutube.results[0] && (
         <div className="pt-5 mx-96">
           <iframe
             width="1088"
@@ -68,7 +75,7 @@ function EventItem({ moviedetails, movieyoutube }) {
             allowFullScreen
           />
         </div>
-      )}
+      )} */}
     </div>
   );
 }

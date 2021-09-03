@@ -40,7 +40,7 @@ function PopularMenu() {
     <>
       <div className="group md:flex inline-block  relative mx-auto max-w-screen-xl  pl-5 pr-14 mt-5">
         <p className="text-black bold whitespace-nowrap text-2xl">What&apos;s Popular</p>
-        <ul className="    group-hover:block hidden border-2 whitespace-nowrap border-black ml-5 py-1 px-2  rounded-lg md:rounded-full ">
+        <ul className="group-hover:block hidden border-2 whitespace-nowrap border-black ml-5 py-1 px-2  rounded-lg md:rounded-full ">
           <li className="md:inline mr-4 active:bg-green-700">
             <button type="button" value="popular" onClick={handlePopularChange}>
               Popular
