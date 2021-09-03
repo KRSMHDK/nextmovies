@@ -24,15 +24,15 @@ function Discover() {
   return (
     <>
       <div
-        className="bg-cover bg-gray-700 bg-opacity-70 mx-auto max-w-screen-xl   justify-center h-80 "
+        className="bg-cover  bg-gray-700 bg-opacity-70 mx-auto w-full max-w-screen-xl  white-space: nowrap justify-center h-80 "
         style={{
           backgroundImage: `url('https://image.tmdb.org/t/p/w1280${bgImage}')`,
         }}
       >
-        <div className="h-80 pt-14  pr-12 pl-11 bg-gray-700 bg-opacity-70">
+        <div className="h-80 pt-7 w-full pr-12 pl-11 bg-gray-700 bg-opacity-70">
           <p className="text-5xl text-white">Welcome.</p>
 
-          <p className="text-3xl text- text-white">
+          <p className="text-3xl   text-white">
             Millions of movies, TV shows and people to discover. Explore now.
           </p>
           <form className="mt-10 flex p-auto w-auto " onSubmit={handleSearch}>
