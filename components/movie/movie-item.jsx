@@ -21,15 +21,15 @@ function EventItem({ moviedetails, movieyoutube }) {
         }}
       >
         <div className="lg:flex lg:pt-12 pb-12    bg-black bg-opacity-70">
-          <div className="text-white mx-auto relative flex bg-blue-500 ">
+          <div className="text-white mx-auto relative flex  ">
             <img
               className=" border-black ml-5 mt-5 z-20 absolute rounded-2xl  w-20 h-30 "
               src={`https://image.tmdb.org/t/p/w500${moviedetails.poster_path}`}
               alt={moviedetails.title}
             />
-            <div className="bg-gradient-to-r from-black inset-0   absolute z-10 w-full " />
+            <div className="bg-gradient-to-r from-black to-transparent inset-0   absolute z-10 w-full " />
             <img
-              className="w-full h-40 zbg-grey-900 bg-opacity-75"
+              className=" w-full"
               src={`https://image.tmdb.org/t/p/w1280${moviedetails.backdrop_path}`}
               alt=""
             />
