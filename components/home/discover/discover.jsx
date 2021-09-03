@@ -46,7 +46,7 @@ function Discover() {
             />
             <button
               type="button"
-              className="bg-blue-500   hover:bg-blue-400 text-white font-bold py-2 px-5 rounded-r-full"
+              className="bg-blue-500 cursor-pointer hover:bg-blue-400 text-white font-bold py-2 px-5 rounded-r-full"
             >
               Search
             </button>
