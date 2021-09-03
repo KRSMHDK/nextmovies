@@ -1,3 +1,5 @@
+/* eslint-disable function-paren-newline */
+/* eslint-disable implicit-arrow-linebreak */
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 
