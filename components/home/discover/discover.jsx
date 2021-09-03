@@ -35,7 +35,7 @@ function Discover() {
           <p className="text-3xl text- text-white">
             Millions of movies, TV shows and people to discover. Explore now.
           </p>
-          <form className="mt-10 flex p-auto    w-auto border-2" onSubmit={handleSearch}>
+          <form className="mt-10 flex p-auto w-auto " onSubmit={handleSearch}>
             <input
               className="border-2 h-10  w-full  rounded-l-lg  px-3 text-gray-700  focus:outline-none focus:shadow-outline"
               id="Movie"
