@@ -38,9 +38,9 @@ function PopularMenu() {
 
   return (
     <>
-      <div className="ml-80 mt-5">
-        <p className="text-black bold inline text-2xl">What&apos;s Popular</p>
-        <ul className="border-2  border-black ml-5 py-1 px-2 inline rounded-full ">
+      <div className="flex mx-auto max-w-screen-xl  pl-5 pr-14 mt-5">
+        <p className="text-black bold whitespace-nowrap text-2xl">What&apos;s Popular</p>
+        <ul className="border-2 whitespace-nowrap border-black ml-5 py-1 px-2  rounded-full ">
           <li className="inline mr-4 active:bg-green-700">
             <button type="button" value="popular" onClick={handlePopularChange}>
               Popular

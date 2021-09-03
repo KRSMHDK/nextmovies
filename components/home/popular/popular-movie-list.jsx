@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 function PopularMovieList({ movies }) {
   return (
-    <div className="mx-72 mt-5">
+    <div className="mx-auto max-w-screen-xl mt-5">
       <ul className="flex overflow-x-scroll ">
         {movies.results.map((movie) => (
           <li key={movie.id} className="flex-none  ml-5 ">
