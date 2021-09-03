@@ -24,7 +24,7 @@ function Discover() {
   return (
     <>
       <div
-        className="bg-cover  mx-auto w-full max-w-screen-xl  white-space: nowrap justify-center h-80 "
+        className="bg-cover mx-auto w-full max-w-screen-xl h-80 "
         style={{
           backgroundImage: `url('https://image.tmdb.org/t/p/w1280${bgImage}')`,
         }}
