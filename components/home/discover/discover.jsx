@@ -24,20 +24,20 @@ function Discover() {
   return (
     <>
       <div
-        className="bg-cover bg-gray-700  bg-opacity-70 mx-auto max-w-screen-xl justify-center h-80 "
+        className="bg-cover bg-gray-700 bg-opacity-70 mx-auto max-w-screen-xl   justify-center h-80 "
         style={{
           backgroundImage: `url('https://image.tmdb.org/t/p/w1280${bgImage}')`,
         }}
       >
-        <div className="h-80 pt-14 pl-11 bg-gray-700 bg-opacity-70">
+        <div className="h-80 pt-14  pr-12 pl-11 bg-gray-700 bg-opacity-70">
           <p className="text-5xl text-white">Welcome.</p>
 
-          <p className="text-3xl text-white">
+          <p className="text-3xl text- text-white">
             Millions of movies, TV shows and people to discover. Explore now.
           </p>
-          <form className="mt-10" onSubmit={handleSearch}>
+          <form className="mt-10 flex p-auto    w-auto border-2" onSubmit={handleSearch}>
             <input
-              className="border-2 h-10 sm:w-5/6 w-72 rounded-l-lg  px-3 text-gray-700  focus:outline-none focus:shadow-outline"
+              className="border-2 h-10  w-full  rounded-l-lg  px-3 text-gray-700  focus:outline-none focus:shadow-outline"
               id="Movie"
               type="text"
               value={searchQuery}
@@ -46,7 +46,7 @@ function Discover() {
             />
             <button
               type="button"
-              className="bg-blue-500 cursor-pointer hover:bg-blue-400 text-white font-bold py-2 px-5 rounded-r-full"
+              className="bg-blue-500 inline-flex cursor-pointer hover:bg-blue-400 text-white font-bold py-2 px-5 rounded-r-full"
             >
               Search
             </button>
