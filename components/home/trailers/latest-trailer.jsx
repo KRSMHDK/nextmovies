@@ -34,27 +34,26 @@ function PopularTrailer() {
   return (
     <div>
       <div
-        className="bg-cover  mx-auto max-w-screen-xl bg-no-repeat  h-80 "
+        className="max-w-screen-xl mx-auto bg-no-repeat bg-cover h-80 "
         style={{
           backgroundImage:
             'url("https://www.themoviedb.org/t/p/w1920_and_h427_multi_faces/4N6zEMfZ57zNEQcM8gWeERFupMv.jpg")',
         }}
       >
-        <div className="bg-gray-900 h-80   bg-opacity-70  flex-none  mt-5 ">
-          <p className="text-2xl pt-5 pl-5 pb-3 text-white">Latest Trailers</p>
-          <ul className="flex overflow-x-scroll h-64 ">
+        <div className="flex-none mt-5 bg-gray-900 h-80 bg-opacity-70 ">
+          <p className="pt-5 pb-3 pl-5 text-2xl text-white">Latest Trailers</p>
+          <ul className="flex h-64 overflow-x-scroll ">
             {movies.map((movie) => (
               <li key={movie.data.id} className="flex-none ml-5 ">
                 <Link href={`/movies/${movie.data.id}`}>
                   <img
-                    className="
-                h-48 w-72  hover:scale-105 duration-300 rounded-lg"
+                    className="h-48 duration-300 rounded-lg  w-72 hover:scale-105"
                     src={`https://image.tmdb.org/t/p/w1280${movie.data.backdrop_path}`}
                     alt=""
                   />
                 </Link>
-                <div className=" text-center overflow-wrap w-40">
-                  <p className="text-black font-bold">{movie.title}</p>
+                <div className="w-40 text-center  overflow-wrap">
+                  <p className="font-bold text-black">{movie.title}</p>
                   <p className="text-gray-600 font-extralight">{movie.release_date}</p>
                 </div>
               </li>

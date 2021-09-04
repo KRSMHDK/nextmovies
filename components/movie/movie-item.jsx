@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/prop-types */
 import React from 'react';
 
@@ -15,29 +16,27 @@ function EventItem({ moviedetails, movieyoutube }) {
   return (
     <div>
       <div
-        className="bg-cover  mx-auto bg-no-repeat   mt-5 "
+        className="mx-auto mt-5 bg-no-repeat bg-cover "
         style={{
           backgroundImage: `url('https://image.tmdb.org/t/p/w1280${moviedetails.backdrop_path}')`,
         }}
       >
-        <div className="sm:flex sm:pt-12 pb-12 sm:pl-20 sm:pr-20 bg-black bg-opacity-70">
-          <div className="text-white relative  flex sm:flex-row flex-col">
+        <div className="pt-12 pb-12 bg-black sm:flex sm:pl-20 sm:pr-20 bg-opacity-70">
+          <div className="relative flex flex-col text-white sm:flex-row">
             <img
-              className=" border-black  z-20  sm:static mx-auto w-48  sm:w-72 sm:h-96 sm:flex rounded-2xl   "
+              className="z-20 w-48 mx-auto border-black  sm:static sm:w-72 sm:h-96 sm:flex rounded-2xl"
               src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${moviedetails.poster_path}`}
               alt={moviedetails.title}
             />
 
-            <div className=" ml-5 mt-7 mx-auto text-white">
-              <p className="sm:text-4xl sm:text-left text-center text-lg mb-2">
-                {moviedetails.title}
-
-                {moviedetails.release_date}
+            <div className="mx-auto mt-5 ml-5 text-white ">
+              <p className="mb-2 text-2xl text-center sm:text-4xl sm:text-left">
+                {moviedetails.title} - {moviedetails.release_date.slice(0, 4)}
               </p>
 
               {moviedetails.genres.map((genre) => (
                 <span
-                  className="border px-1 mr-1  text-black rounded inline border-red-600 bg-yellow-500 "
+                  className="inline px-1 mr-1 text-black bg-yellow-500 border border-red-600 rounded "
                   key={genre.name}
                 >
                   {genre.name}
@@ -45,16 +44,16 @@ function EventItem({ moviedetails, movieyoutube }) {
               ))}
 
               <span>
-                <img className="h-5 mr-1 inline" src="/clock.png" alt="" />
+                <img className="inline h-5 mr-1" src="/clock.png" alt="" />
                 {timeConvert(moviedetails.runtime)}
               </span>
-              <p className=" italic mt-5 text-gray-50">{moviedetails.tagline}</p>
-              <p className="border-green-600 mt-3 text-2xl inline-block border-4 px-4 py-3 rounded-full  ">
+              <p className="mt-5 italic  text-gray-50">{moviedetails.tagline}</p>
+              <p className="inline-block px-4 py-3 mt-3 text-2xl border-4 border-green-600 rounded-full ">
                 {moviedetails.vote_average}
               </p>
               <span> User Score</span>
               <p className="mt-4 mb-3 text-2xl">Overview</p>
-              <p className=" ">{moviedetails.overview}</p>
+              <p className="">{moviedetails.overview}</p>
             </div>
           </div>
         </div>
