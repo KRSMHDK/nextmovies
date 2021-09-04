@@ -1,31 +1,40 @@
 import React, { useEffect, useState } from 'react';
 
 import MovieItem from '../../components/movie/movie-item';
+import Actors from '../../components/movie/actors';
 
 function MoviePage() {
   const [movieDetails, setMovieDetails] = useState(null);
   const [movieYoutube, setMovieYoutube] = useState(null);
+  const [actors, setActors] = useState(null);
 
   useEffect(() => {
     async function fetchMyApi() {
       const last = window.location.href.split('/').pop();
 
-      const movieDetailsFetch = await fetch(
-        `https://api.themoviedb.org/3/movie/${last}?api_key=c23ca659c06dfcb43fa6f25e4eeadfa3&language=en-US`,
-      );
-      const movieYoutubeFetch = await fetch(
-        `https://api.themoviedb.org/3/movie/${last}/videos?api_key=c23ca659c06dfcb43fa6f25e4eeadfa3&language=en-US`,
-      );
+      const movieDetailsFetch = await fetch('/api/singleMovieAPI', { method: 'POST', body: last });
+
+      const movieYoutubeFetch = await fetch('/api/singleMovieYoutubeAPI', {
+        method: 'POST',
+        body: last,
+      });
+
+      const actorsFetch = await fetch('/api/actorsAPI', { method: 'POST', body: last });
+
+      const actorsDetails = await actorsFetch.json();
       const dataMovieDetails = await movieDetailsFetch.json();
       const dataMovieYoutube = await movieYoutubeFetch.json();
-      setMovieDetails(dataMovieDetails);
-      setMovieYoutube(dataMovieYoutube);
+
+      setActors(actorsDetails.data);
+      setMovieDetails(dataMovieDetails.data);
+      setMovieYoutube(dataMovieYoutube.data);
     }
 
     fetchMyApi();
   }, []);
 
-  if (movieDetails === null || movieYoutube === null) {
+  console.log(movieDetails);
+  if (movieDetails === null || movieYoutube === null || actors === null) {
     return (
       <>
         <p>Loading...</p>
@@ -35,6 +44,7 @@ function MoviePage() {
   return (
     <>
       <MovieItem moviedetails={movieDetails} movieyoutube={movieYoutube} />
+      <Actors actors={actors} />
     </>
   );
 }
