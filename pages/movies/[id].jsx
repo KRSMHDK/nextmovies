@@ -33,7 +33,6 @@ function MoviePage() {
     fetchMyApi();
   }, []);
 
-  console.log(movieDetails);
   if (movieDetails === null || movieYoutube === null || actors === null) {
     return (
       <>
