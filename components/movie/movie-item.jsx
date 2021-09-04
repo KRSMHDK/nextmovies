@@ -21,7 +21,7 @@ function EventItem({ moviedetails, movieyoutube }) {
           backgroundImage: `url('https://image.tmdb.org/t/p/w1280${moviedetails.backdrop_path}')`,
         }}
       >
-        <div className="pt-12 pb-12 pl-5 pr-5 bg-black sm:flex sm:pr-24 sm:pl-72 bg-opacity-70">
+        <div className="pt-12 pb-12 pr-5 bg-black sm:flex sm:pr-24 sm:pl-72 bg-opacity-70">
           <div className="relative flex flex-col text-white sm:flex-row">
             <img
               className="z-20 w-48 mx-auto border-black sm:static sm:w-64 sm:h-96 sm:flex rounded-2xl"
