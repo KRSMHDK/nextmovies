@@ -3,17 +3,18 @@ import React from 'react';
 
 function Actors({ actors }) {
   return (
-    <div className="h-auto max-w-screen-xl pt-5 mx-auto mt-5 ">
-      <ul className="flex h-auto pb-5 overflow-x-scroll ">
+    <div className="h-auto max-w-screen-xl pt-5 mx-auto mt-2 ">
+      <p className="text-lg font-bold">Top Billed Cast </p>
+      <ul className="flex flex-shrink-0 h-auto pb-5 mt-3 overflow-x-scroll ">
         {actors.cast.map((actor) => (
-          <li className="flex-shrink-0 mr-5 rounded-xl ">
+          <li className="flex-shrink-0 h-auto mr-5 shadow-lg w-28 rounded-xl ">
             <img
-              className="mx-auto rounded-xl"
+              className="mx-auto w-28 rounded-xl"
               alt={actor.name}
               src={`https://www.themoviedb.org/t/p/w138_and_h175_face${actor.profile_path}`}
             />
-            <p className="font-bold text-center text-md">{actor.name}</p>
-            <p className="text-center text-md">{actor.character}</p>
+            <p className="pl-2 text-sm font-bold text-left">{actor.name}</p>
+            <p className="pl-2 text-sm text-left ">{actor.character}</p>
           </li>
         ))}
       </ul>

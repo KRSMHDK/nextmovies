@@ -21,15 +21,14 @@ function EventItem({ moviedetails, movieyoutube }) {
           backgroundImage: `url('https://image.tmdb.org/t/p/w1280${moviedetails.backdrop_path}')`,
         }}
       >
-        <div className="pt-12 pb-12 bg-black sm:flex sm:pl-20 sm:pr-20 bg-opacity-70">
+        <div className="pt-12 pb-12 pl-5 pr-5 bg-black sm:flex sm:pr-24 sm:pl-72 bg-opacity-70">
           <div className="relative flex flex-col text-white sm:flex-row">
             <img
-              className="z-20 w-48 mx-auto border-black  sm:static sm:w-72 sm:h-96 sm:flex rounded-2xl"
+              className="z-20 w-48 mx-auto border-black sm:static sm:w-64 sm:h-96 sm:flex rounded-2xl"
               src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${moviedetails.poster_path}`}
               alt={moviedetails.title}
             />
-
-            <div className="mx-auto mt-5 ml-5 text-white ">
+            <div className="pl-10 mx-auto mt-5 text-white ">
               <p className="mb-2 text-2xl text-center sm:text-4xl sm:text-left">
                 {moviedetails.title} - {moviedetails.release_date.slice(0, 4)}
               </p>
@@ -47,7 +46,7 @@ function EventItem({ moviedetails, movieyoutube }) {
                 <img className="inline h-5 mr-1" src="/clock.png" alt="" />
                 {timeConvert(moviedetails.runtime)}
               </span>
-              <p className="mt-5 italic  text-gray-50">{moviedetails.tagline}</p>
+              <p className="mt-5 italic text-gray-50">{moviedetails.tagline}</p>
               <p className="inline-block px-4 py-3 mt-3 text-2xl border-4 border-green-600 rounded-full ">
                 {moviedetails.vote_average}
               </p>
