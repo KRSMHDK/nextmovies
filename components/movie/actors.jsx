@@ -3,7 +3,7 @@ import React from 'react';
 
 function Actors({ actors }) {
   return (
-    <div className="h-auto max-w-screen-xl pt-5 mx-auto mt-2 ">
+    <div className="h-auto max-w-screen-xl pt-5 pl-5 mx-auto mt-2 ">
       <p className="text-lg font-bold">Top Billed Cast </p>
       <ul className="flex flex-shrink-0 h-auto pb-5 mt-3 overflow-x-scroll ">
         {actors.cast.map((actor) => (
