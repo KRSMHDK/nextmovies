@@ -2,6 +2,7 @@
 /* eslint-disable implicit-arrow-linebreak */
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 function PopularTrailer() {
   const [movies, setMovies] = useState(null);
@@ -46,13 +47,17 @@ function PopularTrailer() {
             {movies.map((movie) => (
               <li key={movie.data.id} className="flex-none ml-5 ">
                 <Link href={`/movies/${movie.data.id}`}>
-                  <img
-                    className="h-48 duration-300 rounded-lg  w-72 hover:scale-105"
+                  <Image
+                    className="duration-300 rounded-lg hover:scale-105"
                     src={`https://image.tmdb.org/t/p/w1280${movie.data.backdrop_path}`}
                     alt=""
+                    height={192}
+                    width={288}
+                    placeholder="blur"
+                    blurDataURL="/images/blur.png"
                   />
                 </Link>
-                <div className="w-40 text-center  overflow-wrap">
+                <div className="w-40 text-center overflow-wrap">
                   <p className="font-bold text-black">{movie.title}</p>
                   <p className="text-gray-600 font-extralight">{movie.release_date}</p>
                 </div>

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 function Discover() {
-  const [bgImage, setBgImage] = useState('/jlGmlFOcfo8n5tURmhC7YVd4Iyy.jpg');
+  const [bgImage, setBgImage] = useState('');
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -23,12 +24,14 @@ function Discover() {
   }
   return (
     <>
-      <div
-        className="w-full max-w-screen-xl mx-auto bg-cover h-80 "
-        style={{
-          backgroundImage: `url('https://image.tmdb.org/t/p/w1280${bgImage}')`,
-        }}
-      >
+      <div className="relative w-full max-w-screen-xl mx-auto h-80 ">
+        <Image
+          className="bg-cover -z-10"
+          layout="fill"
+          src={`https://image.tmdb.org/t/p/w1280${bgImage}`}
+          objectFit="cover"
+          objectPosition="top"
+        />
         <div className="w-full pr-12 bg-gray-700 h-80 pt-7 pl-11 bg-opacity-70">
           <p className="text-5xl text-white">Welcome.</p>
 
@@ -37,7 +40,7 @@ function Discover() {
           </p>
           <form className="flex w-auto mt-10 p-auto " onSubmit={handleSearch}>
             <input
-              className="w-full h-10 px-3 text-gray-700 border-2 rounded-l-lg focus:outline-none focus:shadow-outline"
+              className="z-10 w-full h-10 px-3 text-gray-700 border-2 rounded-l-lg focus:outline-none focus:shadow-outline"
               id="Movie"
               type="text"
               value={searchQuery}
@@ -46,7 +49,7 @@ function Discover() {
             />
             <button
               type="submit"
-              className="inline-flex px-5 py-2 font-bold text-white bg-blue-500 rounded-r-full cursor-pointer hover:bg-blue-400"
+              className="z-10 inline-flex px-5 py-2 font-bold text-white bg-blue-500 rounded-r-full cursor-pointer hover:bg-blue-400"
             >
               Search
             </button>
@@ -58,3 +61,9 @@ function Discover() {
 }
 
 export default Discover;
+
+// {
+//   /* style={{
+//   backgroundImage: `url('https://image.tmdb.org/t/p/w1280${bgImage}')`,
+// }} */
+// }
