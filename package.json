@@ -7,6 +7,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/react": "^17.0.20",
     "axios": "^0.21.1",
     "next": "latest",
     "prop-types": "^15.7.2",
