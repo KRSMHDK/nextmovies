@@ -1,18 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PopularMovieList from './PopularMovieList';
 
-function PopularMenu() {
-  const [Movies, setMovies] = useState(null);
-
-  useEffect(() => {
-    const fetchResults = async () => {
-      const res = await fetch('/api/popular-movie');
-      const data = await res.json();
-
-      setMovies(data.data);
-    };
-    fetchResults();
-  }, []);
+// eslint-disable-next-line react/prop-types
+function PopularMenu({ popularMovies }) {
+  const [Movies, setMovies] = useState(popularMovies);
 
   const handlePopularChange = async () => {
     const res = await fetch('/api/popular-movie');
@@ -46,7 +37,7 @@ function PopularMenu() {
               Popular
             </button>
           </li>
-          <li className="mr-4  md:inline">
+          <li className="mr-4 md:inline">
             <button type="button" value="TopRated" onClick={handleTopRatedChange}>
               Top Rated
             </button>

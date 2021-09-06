@@ -12,6 +12,11 @@ const MovieAPI = {
     axios
       .get(`${SERVER_BASE_URL}${id}/credits?api_key=${process.env.API_KEY}&language=en-US`)
       .catch((err) => err.response.status),
+
+  getPopularMovie: () =>
+    axios.get(
+      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}&language=en-US&page=1`,
+    ),
 };
 
 export default MovieAPI;
