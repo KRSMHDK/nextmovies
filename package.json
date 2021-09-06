@@ -24,6 +24,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "postcss": "^8.3.5",
     "prettier-config-airbnb": "^1.0.0",
-    "tailwindcss": "^2.2.4"
+    "tailwindcss": "^2.2.4",
+    "typescript": "^4.4.2"
   }
 }
