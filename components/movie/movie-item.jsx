@@ -3,7 +3,7 @@
 import React from 'react';
 
 // eslint-disable-next-line no-unused-vars
-function EventItem({ moviedetails, movieyoutube }) {
+function EventItem({ moviedetails }) {
   function timeConvert(n) {
     const num = n;
     const hours = num / 60;
