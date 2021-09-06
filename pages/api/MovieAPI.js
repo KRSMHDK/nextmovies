@@ -1,6 +1,6 @@
 /* eslint-disable implicit-arrow-linebreak */
 import axios from 'axios';
-import { SERVER_BASE_URL } from '../../lib/utils/constants.ts';
+import { SERVER_BASE_URL } from '../../lib/utils/constants';
 
 const MovieAPI = {
   getMovieById: (id) =>

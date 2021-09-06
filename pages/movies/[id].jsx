@@ -1,7 +1,7 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-
-import MovieItem from '../../components/movie/movie-item';
-import Actors from '../../components/movie/actors';
+import MovieItem from '../../components/movie/MovieItem';
+import Actors from '../../components/movie/Actors';
 import MovieAPI from '../api/MovieAPI';
 
 function MoviePage({ movieDetails, actorsDetails }) {
