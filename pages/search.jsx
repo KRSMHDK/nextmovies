@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import SearchResults from '../components/search/search-results';
+import SearchResults from '../components/search/SearchResults';
 
 function search() {
   const [results, setResults] = useState(null);

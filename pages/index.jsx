@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import React from 'react';
-import Discover from '../components/home/discover/discover';
-import PopularMenu from '../components/home/popular/popular-menu';
-import PopularTrailer from '../components/home/trailers/latest-trailer';
+import Discover from '../components/home/discover/Discover';
+import PopularMenu from '../components/home/popular/PopularMenu';
+import PopularTrailer from '../components/home/trailers/LatestTrailer';
 
 export default function Home() {
   return (

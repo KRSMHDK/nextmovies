@@ -3,7 +3,7 @@
 import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import 'tailwindcss/tailwind.css';
-import Layout from '../components/layout/layout';
+import Layout from '../components/layout/Layout';
 
 function MyApp({ Component, pageProps }) {
   return (
