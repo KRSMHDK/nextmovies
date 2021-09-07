@@ -8,7 +8,7 @@ function PopularMovieList({ movies }) {
     <div className="max-w-screen-xl mx-auto mt-5">
       <ul className="flex overflow-x-scroll ">
         {movies.results.map((movie) => (
-          <li key={movie.id} className="flex-none ml-5 ">
+          <li key={movie.id} className="flex-none ml-2 ">
             <Link href={`/movies/${movie.id}`}>
               <Image
                 className="border rounded-lg cursor-pointer"
