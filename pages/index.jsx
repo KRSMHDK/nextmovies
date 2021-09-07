@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+/* eslint-disable function-paren-newline */
+/* eslint-disable implicit-arrow-linebreak */
 import Head from 'next/head';
 import React from 'react';
 import Discover from '../components/home/discover/Discover';
@@ -6,7 +8,8 @@ import PopularMenu from '../components/home/popular/PopularMenu';
 import PopularTrailer from '../components/home/trailers/LatestTrailer';
 import MovieAPI from './api/MovieAPI';
 
-export default function Home({ popularMovies, upcomingMovies, topRatedMovies }) {
+// eslint-disable-next-line object-curly-newline
+export default function Home({ popularMovies, upcomingMovies, topRatedMovies, latestTrailer }) {
   return (
     <div>
       <Head>
@@ -19,7 +22,7 @@ export default function Home({ popularMovies, upcomingMovies, topRatedMovies }) 
         upcomingMovies={upcomingMovies}
         topRatedMovies={topRatedMovies}
       />
-      <PopularTrailer />
+      <PopularTrailer latestTrailer={latestTrailer} />
     </div>
   );
 }
@@ -29,11 +32,20 @@ export async function getStaticProps() {
   const upcomingMovies = await MovieAPI.getUpcomingMovies();
   const topRatedMovies = await MovieAPI.getTopRatedMovies();
 
+  const latestTrailerId = await upcomingMovies.data.results.map((movie) => movie.id);
+
+  const latestTrailerPromise = await Promise.all(
+    latestTrailerId.map((id) => MovieAPI.getUpcomingTrailer(id)),
+  );
+
+  const latestTrailer = latestTrailerPromise.map((a) => a.data);
+
   return {
     props: {
       popularMovies: popularMovies.data,
       upcomingMovies: upcomingMovies.data,
       topRatedMovies: topRatedMovies.data,
-    }, // will be passed to the page component as props
+      latestTrailer,
+    },
   };
 }
