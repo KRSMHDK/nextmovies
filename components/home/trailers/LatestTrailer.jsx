@@ -2,36 +2,11 @@
 /* eslint-disable function-paren-newline */
 /* eslint-disable implicit-arrow-linebreak */
 import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 
 function PopularTrailer({ latestTrailer }) {
-  const [movies, setMovies] = useState(latestTrailer);
-
-  useEffect(() => {
-    const fetchResults = async () => {
-      const res = await fetch('/api/upcoming-movie');
-      const data = await res.json();
-
-      const res2 = await data.data.results.map((movie) => movie.id);
-
-      const res3 = await Promise.all(
-        res2.map((m) =>
-          fetch('/api/popular-trailer', {
-            method: 'POST',
-            body: m,
-          }).then((result) => result.json()),
-        ),
-      );
-
-      setMovies(res3);
-    };
-    fetchResults();
-  }, []);
-
-  if (movies === null) {
-    return <div />;
-  }
+  const [movies] = useState(latestTrailer);
 
   return (
     <div>

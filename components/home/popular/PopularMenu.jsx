@@ -5,6 +5,11 @@ import PopularMovieList from './PopularMovieList';
 function PopularMenu({ popularMovies, upcomingMovies, topRatedMovies }) {
   const [Movies, setMovies] = useState(popularMovies);
 
+  const handleTopRatedChange = async () => {
+    const res = await fetch('/api/top-rated');
+    const data = await res.json();
+    setMovies(data.data);
+  };
   return (
     <>
       <div className="relative inline-block max-w-screen-xl pl-5 mx-auto mt-5 group md:flex pr-14">

@@ -14,7 +14,7 @@ function PopularMovieList({ movies }) {
                 className="border rounded-lg cursor-pointer"
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt=""
-                width={160}
+                width={150}
                 height={224}
                 placeholder="blur"
                 blurDataURL="/images/blur.png"
