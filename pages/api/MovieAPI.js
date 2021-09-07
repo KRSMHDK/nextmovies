@@ -5,7 +5,9 @@ import { SERVER_BASE_URL } from '../../lib/utils/constants';
 const MovieAPI = {
   getMovieById: (id) =>
     axios
-      .get(`${SERVER_BASE_URL}${id}?api_key=${process.env.API_KEY}&language=en-US`)
+      .get(
+        `${SERVER_BASE_URL}${id}?api_key=${process.env.API_KEY}&append_to_response=videos,images`,
+      )
       .catch((err) => err.response.status),
 
   getActorsByMovieId: (id) =>

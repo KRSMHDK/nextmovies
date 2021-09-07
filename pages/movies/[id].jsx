@@ -3,12 +3,14 @@ import React from 'react';
 import MovieItem from '../../components/movie/MovieItem';
 import Actors from '../../components/movie/Actors';
 import MovieAPI from '../api/MovieAPI';
+import Media from '../../components/movie/Media';
 
 function MoviePage({ movieDetails, actorsDetails }) {
   return (
     <>
       <MovieItem moviedetails={movieDetails} />
       <Actors actors={actorsDetails} />
+      <Media movieDetails={movieDetails} />
     </>
   );
 }
