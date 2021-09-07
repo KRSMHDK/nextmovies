@@ -25,9 +25,9 @@ export default function Home({ popularMovies, upcomingMovies, topRatedMovies }) 
 }
 
 export async function getStaticProps() {
-  const popularMovies = await MovieAPI.getPopularMovie();
-  const upcomingMovies = await MovieAPI.getUpcoming();
-  const topRatedMovies = await MovieAPI.getTopRated();
+  const popularMovies = await MovieAPI.getPopularMovies();
+  const upcomingMovies = await MovieAPI.getUpcomingMovies();
+  const topRatedMovies = await MovieAPI.getTopRatedMovies();
 
   return {
     props: {
