@@ -14,6 +14,8 @@ function Media({ movieDetails }) {
             <li key={movie.file_path} className="flex-shrink-0 mr-5 shadow-lg rounded-xl ">
               <Image
                 className="mx-auto rounded-xl"
+                placeholder="blur"
+                blurDataURL="/images/blur.png"
                 width={533}
                 height={300}
                 src={`https://www.themoviedb.org/t/p/w533_and_h300_bestv2${movie.file_path}`}

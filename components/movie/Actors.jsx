@@ -14,6 +14,8 @@ function Actors({ actors }) {
               width={112}
               height={142}
               alt={actor.name}
+              placeholder="blur"
+              blurDataURL="/images/blur.png"
               src={
                 actor.profile_path === null
                   ? 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'

@@ -10,17 +10,20 @@ function PopularTrailer({ latestTrailer }) {
 
   return (
     <div>
-      <div className="relative max-w-screen-xl mx-auto bg-no-repeat bg-cover">
-        <Image
-          className="bg-cover -z-10"
-          layout="fill"
-          src="https://image.tmdb.org/t/p/w1920_and_h427_multi_faces/4N6zEMfZ57zNEQcM8gWeERFupMv.jpg"
-          objectFit="cover"
-          objectPosition="top"
-        />
-        <div className="flex-none bg-gray-900 bg-opacity-70 ">
+      <div className="relative max-w-screen-xl mx-auto ">
+        <div className="absolute">
+          <Image
+            className="bg-scroll -z-10"
+            height={367}
+            width={1280}
+            layout="fixed"
+            src="https://image.tmdb.org/t/p/w1920_and_h427_multi_faces/4N6zEMfZ57zNEQcM8gWeERFupMv.jpg"
+          />
+        </div>
+
+        <div className="bg-gray-900 bg-opacity-70">
           <p className="pt-5 pb-3 pl-5 text-2xl text-white">Latest Trailers</p>
-          <ul className="flex overflow-x-scroll h-72 ">
+          <ul className="flex pb-10 overflow-x-scroll h-80 ">
             {movies.map(
               (movie) =>
                 movie.videos.results[0] !== undefined && (
