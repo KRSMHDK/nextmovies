@@ -22,8 +22,8 @@ function PopularMovieList({ movies }) {
               />
             </Link>
             <div className="w-40 overflow-wrap">
-              <p className="pl-2 font-bold text-black">{movie.title}</p>
-              <p className="pb-2 pl-2 font-light text-gray-600">
+              <p className="pl-2 text-sm font-bold text-black">{movie.title}</p>
+              <p className="pb-2 pl-2 text-sm font-light text-gray-600">
                 {dateformat(movie.release_date, 'mediumDate')}
               </p>
             </div>
