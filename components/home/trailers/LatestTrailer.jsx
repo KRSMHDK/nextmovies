@@ -17,7 +17,7 @@ function PopularTrailer({ latestTrailer }) {
             'url("https://www.themoviedb.org/t/p/w1920_and_h427_multi_faces/4N6zEMfZ57zNEQcM8gWeERFupMv.jpg")',
         }}
       >
-        <div className="flex-none mt-5 bg-gray-900 bg-opacity-70 ">
+        <div className="flex-none bg-gray-900 bg-opacity-70 ">
           <p className="pt-5 pb-3 pl-5 text-2xl text-white">Latest Trailers</p>
           <ul className="flex overflow-x-scroll h-72 ">
             {movies.map(

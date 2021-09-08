@@ -2,6 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import dateformat from 'dateformat';
 
 function PopularMovieList({ movies }) {
   return (
@@ -20,9 +21,11 @@ function PopularMovieList({ movies }) {
                 blurDataURL="/images/blur.png"
               />
             </Link>
-            <div className="w-40 text-center overflow-wrap">
-              <p className="font-bold text-black">{movie.title}</p>
-              <p className="text-gray-600 font-extralight">{movie.release_date}</p>
+            <div className="w-40 overflow-wrap">
+              <p className="pl-2 font-bold text-black">{movie.title}</p>
+              <p className="pb-2 pl-2 font-light text-gray-600">
+                {dateformat(movie.release_date, 'mediumDate')}
+              </p>
             </div>
           </li>
         ))}

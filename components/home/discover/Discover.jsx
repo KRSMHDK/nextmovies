@@ -10,7 +10,7 @@ function Discover() {
   useEffect(() => {
     const bgImageRoll = {
       0: '/6t8ES1d12OzWyCGxBeDYLHoaDrT.jpg',
-      1: '/vVpEOvdxVBP2aV166j5Xlvb5Cdc.jpg',
+      1: '/yY76zq9XSuJ4nWyPDuwkdV7Wt0c.jpg',
       2: '/zqkmTXzjkAgXmEWLRsY4UpTWCeo.jpg',
       3: '/nNmJRkg8wWnRmzQDe2FwKbPIsJV.jpg',
     };
@@ -24,7 +24,7 @@ function Discover() {
   }
   return (
     <>
-      <div className="relative w-full max-w-screen-xl mx-auto h-80 ">
+      <div className="relative w-full max-w-screen-xl mx-auto h-96 ">
         <Image
           className="bg-cover -z-10"
           layout="fill"
@@ -32,7 +32,7 @@ function Discover() {
           objectFit="cover"
           objectPosition="top"
         />
-        <div className="w-full pr-12 from-blue-900 via-transparent to-blue-900 bg-gradient-to-tr h-80 pt-7 pl-11 ">
+        <div className="w-full h-full pt-24 pr-12 from-green-900/30 to-blue-900/60 bg-gradient-to-r pl-11 ">
           <p className="text-5xl text-white">Welcome.</p>
 
           <p className="text-3xl text-white">
