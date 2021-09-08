@@ -3,7 +3,7 @@ import React from 'react';
 
 function MainHeader() {
   return (
-    <nav className="flex flex-wrap items-center h-16  md:pl-80 bg-header">
+    <nav className="flex flex-wrap items-center h-16 pl-12 md:pl-80 bg-header">
       <div className="flex mr-6 ">
         <img className="w-8 h-8 mr-2 " src="/logo.png" alt="" />
         <Link passHref href="/">

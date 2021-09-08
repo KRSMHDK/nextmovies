@@ -32,7 +32,7 @@ function Discover() {
           objectFit="cover"
           objectPosition="top"
         />
-        <div className="w-full h-full pt-24 pr-12 from-green-900/30 to-blue-900/60 bg-gradient-to-r pl-11 ">
+        <div className="w-full h-full pt-12 pr-12 md:pt-24 from-green-900/30 to-blue-900/60 bg-gradient-to-r pl-11 ">
           <p className="text-5xl text-white">Welcome.</p>
 
           <p className="text-3xl text-white">
