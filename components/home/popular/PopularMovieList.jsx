@@ -27,6 +27,8 @@ function PopularMovieList({ movies }) {
               <CircularProgressbar
                 className="absolute h-11 -bottom-4 -left-14"
                 background
+                strokeWidth={7}
+                backgroundPadding={6}
                 value={movie.vote_average * 10}
                 text={`${movie.vote_average * 10}%`}
                 styles={{

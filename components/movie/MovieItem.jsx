@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { CircularProgressbar } from 'react-circular-progressbar';
 
 // eslint-disable-next-line no-unused-vars
 function EventItem({ moviedetails }) {
@@ -30,7 +31,7 @@ function EventItem({ moviedetails }) {
             />
             <div className="pl-10 mx-auto mt-5 text-white ">
               <p className="mb-2 text-2xl text-center sm:text-4xl sm:text-left">
-                {moviedetails.title} - {moviedetails.release_date.slice(0, 4)}
+                {moviedetails.title} ({moviedetails.release_date.slice(0, 4)})
               </p>
 
               {moviedetails.genres.map((genre) => (
@@ -47,10 +48,37 @@ function EventItem({ moviedetails }) {
                 {timeConvert(moviedetails.runtime)}
               </span>
               <p className="mt-5 italic text-gray-50">{moviedetails.tagline}</p>
-              <p className="inline-block px-4 py-3 mt-3 text-2xl border-4 border-green-600 rounded-full ">
-                {moviedetails.vote_average}
-              </p>
-              <span> User Score</span>
+              <div className="inline-flex mt-5">
+                <div>
+                  <CircularProgressbar
+                    className="h-20 text-left "
+                    background
+                    strokeWidth={7}
+                    backgroundPadding={6}
+                    value={moviedetails.vote_average * 10}
+                    text={`${moviedetails.vote_average * 10}%`}
+                    styles={{
+                      path: {
+                        stroke: `${moviedetails.vote_average > 7 ? '#13e451' : '#f0bb0e'}`,
+                        strokeLinecap: 'butt',
+                      },
+                      trail: {
+                        stroke: '#ffffff',
+                      },
+                      text: {
+                        fill: '#fff',
+                        fontSize: '26px',
+                      },
+                      background: {
+                        fill: '#080303',
+                      },
+                    }}
+                  />
+                </div>
+
+                <span className="w-0 pl-1 m-auto font-bold "> User Score</span>
+              </div>
+
               <p className="mt-4 mb-3 text-2xl">Overview</p>
               <p className="">{moviedetails.overview}</p>
             </div>
