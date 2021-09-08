@@ -2,6 +2,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import Link from 'next/link';
+import dateformat from 'dateformat';
 
 function SearchResults({ results }) {
   return (
@@ -17,24 +18,27 @@ function SearchResults({ results }) {
         </div>
       </div>
       <div>
-        <ul className="pr-20 mt-20 ">
+        <ul className="px-5 pt-5">
           {results.data.results.map((movie) => (
-            <li
-              className="flex min-w-0 min-h-0 mb-5 border-2 rounded-lg shadow-md h-4/6"
-              key={movie.id}
-            >
+            <li className="flex min-h-0 mb-5 border-2 rounded-lg shadow-md h-4/6" key={movie.id}>
               <Link href={`/movies/${movie.id}`}>
                 <img
                   className="flex-none h-40 w-28 "
-                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                  src={
+                    movie.poster_path === null
+                      ? 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'
+                      : `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                  }
                   alt=""
                 />
               </Link>
-              <div className="ml-4 ">
-                <p className="text-2xl bold">{movie.title}</p>
+              <div className="pt-6 ml-4">
+                <p className="font-bold text-md">{movie.title}</p>
 
-                <p className="mb-2">{movie.release_date}</p>
-                <p className="w-full max-h-full mb-2 ">{movie.overview}</p>
+                <p className="mb-4 text-sm font-light">
+                  {dateformat(movie.release_date, 'longDate')}
+                </p>
+                <p className="w-full max-h-full mb-2 text-md line-clamp-2 ">{movie.overview}</p>
               </div>
             </li>
           ))}
