@@ -10,13 +10,14 @@ function PopularTrailer({ latestTrailer }) {
 
   return (
     <div>
-      <div
-        className="max-w-screen-xl mx-auto bg-no-repeat bg-cover"
-        style={{
-          backgroundImage:
-            'url("https://www.themoviedb.org/t/p/w1920_and_h427_multi_faces/4N6zEMfZ57zNEQcM8gWeERFupMv.jpg")',
-        }}
-      >
+      <div className="relative max-w-screen-xl mx-auto bg-no-repeat bg-cover">
+        <Image
+          className="bg-cover -z-10"
+          layout="fill"
+          src="https://image.tmdb.org/t/p/w1920_and_h427_multi_faces/4N6zEMfZ57zNEQcM8gWeERFupMv.jpg"
+          objectFit="cover"
+          objectPosition="top"
+        />
         <div className="flex-none bg-gray-900 bg-opacity-70 ">
           <p className="pt-5 pb-3 pl-5 text-2xl text-white">Latest Trailers</p>
           <ul className="flex overflow-x-scroll h-72 ">
