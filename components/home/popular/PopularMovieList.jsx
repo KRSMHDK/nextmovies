@@ -31,7 +31,7 @@ function PopularMovieList({ movies }) {
                 text={`${movie.vote_average * 10}%`}
                 styles={{
                   path: {
-                    stroke: '#0fe757be',
+                    stroke: `${movie.vote_average > 7 ? '#13e451' : '#f0bb0e'}`,
                     strokeLinecap: 'butt',
                   },
                   trail: {
