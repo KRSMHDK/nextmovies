@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import Image from 'next/image';
 
 function Actors({ actors }) {
   return (
@@ -8,13 +9,15 @@ function Actors({ actors }) {
       <ul className="flex flex-shrink-0 h-auto pb-5 mt-3 overflow-x-scroll ">
         {actors.cast.map((actor) => (
           <li key={actor.name} className="flex-shrink-0 h-auto pb-2 mr-5 shadow-lg w-28 rounded-xl">
-            <img
-              className="mx-auto w-28 rounded-xl"
+            <Image
+              className="mx-auto rounded-xl"
+              width={112}
+              height={142}
               alt={actor.name}
               src={
                 actor.profile_path === null
                   ? 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'
-                  : `https://www.themoviedb.org/t/p/w138_and_h175_face${actor.profile_path}`
+                  : `https://image.tmdb.org/t/p/w138_and_h175_face${actor.profile_path}`
               }
             />
             <p className="pl-2 text-sm font-bold text-left">{actor.name}</p>

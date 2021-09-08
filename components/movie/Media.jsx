@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import Image from 'next/image';
 
 function Media({ movieDetails }) {
   return (
@@ -11,9 +12,10 @@ function Media({ movieDetails }) {
         ) : (
           movieDetails.images.backdrops.map((movie) => (
             <li key={movie.file_path} className="flex-shrink-0 mr-5 shadow-lg rounded-xl ">
-              <img
-                className="w-full h-full mx-auto rounded-xl"
-                alt=""
+              <Image
+                className="mx-auto rounded-xl"
+                width={533}
+                height={300}
                 src={`https://www.themoviedb.org/t/p/w533_and_h300_bestv2${movie.file_path}`}
               />
             </li>
