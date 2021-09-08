@@ -3,6 +3,7 @@
 import React from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import Image from 'next/image';
 // eslint-disable-next-line no-unused-vars
 function EventItem({ moviedetails }) {
   function timeConvert(n) {
@@ -16,12 +17,14 @@ function EventItem({ moviedetails }) {
 
   return (
     <div>
-      <div
-        className="mx-auto mt-5 bg-no-repeat bg-cover "
-        style={{
-          backgroundImage: `url('https://image.tmdb.org/t/p/w1280${moviedetails.backdrop_path}')`,
-        }}
-      >
+      <div className="relative mx-auto mt-5 ">
+        <Image
+          className="bg-no-repeat -z-10"
+          layout="fill"
+          src={`https://image.tmdb.org/t/p/w1280${moviedetails.backdrop_path}`}
+          objectFit="cover"
+          objectPosition="top"
+        />
         <div className="pt-12 pb-12 pr-5 bg-black sm:flex sm:pr-24 sm:pl-72 bg-opacity-70">
           <div className="relative flex flex-col text-white sm:flex-row">
             <img
