@@ -49,34 +49,32 @@ function EventItem({ moviedetails }) {
               </span>
               <p className="mt-5 italic text-gray-50">{moviedetails.tagline}</p>
               <div className="inline-flex mt-5">
-                <div>
-                  <CircularProgressbar
-                    className="h-20 "
-                    background
-                    strokeWidth={7}
-                    backgroundPadding={6}
-                    value={moviedetails.vote_average * 10}
-                    text={`${moviedetails.vote_average * 10}%`}
-                    styles={{
-                      path: {
-                        stroke: `${moviedetails.vote_average > 7 ? '#13e451' : '#f0bb0e'}`,
-                        strokeLinecap: 'butt',
-                      },
-                      trail: {
-                        stroke: '#ffffff',
-                      },
-                      text: {
-                        fill: '#fff',
-                        fontSize: '26px',
-                      },
-                      background: {
-                        fill: '#080303',
-                      },
-                    }}
-                  />
-                </div>
+                <CircularProgressbar
+                  className="h-20"
+                  background
+                  strokeWidth={7}
+                  backgroundPadding={6}
+                  value={moviedetails.vote_average * 10}
+                  text={`${moviedetails.vote_average * 10}%`}
+                  styles={{
+                    path: {
+                      stroke: `${moviedetails.vote_average > 7 ? '#13e451' : '#f0bb0e'}`,
+                      strokeLinecap: 'butt',
+                    },
+                    trail: {
+                      stroke: '#ffffff',
+                    },
+                    text: {
+                      fill: '#fff',
+                      fontSize: '26px',
+                    },
+                    background: {
+                      fill: '#080303',
+                    },
+                  }}
+                />
 
-                <span className="w-0 pl-1 m-auto font-bold "> User Score</span>
+                <span className="w-20 pl-1 m-auto font-bold "> User Score</span>
               </div>
 
               <p className="mt-4 mb-3 text-2xl">Overview</p>
