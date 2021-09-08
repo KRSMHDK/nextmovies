@@ -51,7 +51,7 @@ function EventItem({ moviedetails }) {
               <div className="inline-flex mt-5">
                 <div>
                   <CircularProgressbar
-                    className="h-20 text-left "
+                    className="h-20 "
                     background
                     strokeWidth={7}
                     backgroundPadding={6}
