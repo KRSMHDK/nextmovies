@@ -38,7 +38,7 @@ function SearchResults({ results }) {
                 <p className="mb-4 text-sm font-light">
                   {dateformat(movie.release_date, 'longDate')}
                 </p>
-                <p className="w-full max-h-full mb-2 text-md line-clamp-2 ">{movie.overview}</p>
+                <p className="w-full max-h-full mb-2 text-sm line-clamp-2 ">{movie.overview}</p>
               </div>
             </li>
           ))}
