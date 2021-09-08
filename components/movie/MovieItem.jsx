@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
-
+import 'react-circular-progressbar/dist/styles.css';
 // eslint-disable-next-line no-unused-vars
 function EventItem({ moviedetails }) {
   function timeConvert(n) {
