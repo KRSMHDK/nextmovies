@@ -1,29 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import SearchResults from '../components/search/SearchResults';
+import MovieAPI from './api/MovieAPI';
 
-function search() {
-  const [results, setResults] = useState(null);
-
-  useEffect(() => {
-    const fetchResults = async () => {
-      const last = window.location.href.split('?').pop();
-      const res = await fetch('/api/search-api', { method: 'POST', body: last });
-      const data = await res.json();
-
-      setResults(data);
-    };
-    fetchResults();
-  }, []);
-
-  if (results === null) {
-    return <div />;
-  }
-
+// eslint-disable-next-line react/prop-types
+function Search({ movieList }) {
   return (
     <>
-      <SearchResults results={results} />
+      <SearchResults results={movieList} />
     </>
   );
 }
 
-export default search;
+export async function getServerSideProps({ query }) {
+  const search = query.query;
+  const res = await MovieAPI.getSearchMovieList(search);
+
+  return {
+    props: { movieList: res.data },
+  };
+}
+export default Search;

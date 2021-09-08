@@ -26,6 +26,11 @@ const MovieAPI = {
 
   getUpcomingTrailer: (id) =>
     axios.get(`${SERVER_BASE_URL}${id}?api_key=${process.env.API_KEY}&append_to_response=videos`),
+
+  getSearchMovieList: (id) =>
+    axios.get(
+      `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&language=en-US&query=${id}&page=1&include_adult=false`,
+    ),
 };
 
 export default MovieAPI;

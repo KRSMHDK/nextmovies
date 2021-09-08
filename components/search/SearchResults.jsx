@@ -13,13 +13,13 @@ function SearchResults({ results }) {
             Search Results
           </p>
           <p className="px-4 py-2 text-sm text-left border-b-2 md:w-52">
-            Found {results.data.total_results} Movies
+            Found {results.total_results} Movies
           </p>
         </div>
       </div>
       <div>
         <ul className="px-5 pt-5">
-          {results.data.results.map((movie) => (
+          {results.results.map((movie) => (
             <li className="flex min-h-0 mb-5 border-2 rounded-lg shadow-md h-4/6" key={movie.id}>
               <Link href={`/movies/${movie.id}`}>
                 <img
