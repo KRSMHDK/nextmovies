@@ -10,7 +10,7 @@ function Actors({ actors }) {
         {actors.cast.map((actor) => (
           <li key={actor.name} className="flex-shrink-0 h-auto pb-2 mr-5 shadow-lg w-28 rounded-xl">
             <Image
-              className="mx-auto rounded-xl"
+              className="mx-auto rounded-t-xl"
               width={112}
               height={142}
               alt={actor.name}

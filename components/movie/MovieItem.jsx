@@ -17,7 +17,7 @@ function EventItem({ moviedetails }) {
 
   return (
     <div>
-      <div className="relative mx-auto mt-5 ">
+      <div className="relative mx-auto ">
         <Image
           className="bg-no-repeat -z-10"
           layout="fill"
