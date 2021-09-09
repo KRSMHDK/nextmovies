@@ -6,7 +6,7 @@ import dateformat from 'dateformat';
 import Pagination from '@material-ui/lab/Pagination';
 import { useRouter } from 'next/router';
 
-function SearchResults({ results, searchQuery, pageNumber }) {
+function SearchResults({ results, searchQuery }) {
   const pageTotal = Math.ceil(results.total_results / 20);
   const router = useRouter();
 
