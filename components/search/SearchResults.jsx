@@ -56,7 +56,13 @@ function SearchResults({ results, searchQuery, pageNumber }) {
             </li>
           ))}
         </ul>
-        <Pagination count={pageTotal} onChange={handleSearch} variant="outlined" color="primary" />
+        <Pagination
+          count={pageTotal}
+          defaultPage={1}
+          onChange={handleSearch}
+          variant="outlined"
+          color="primary"
+        />
       </div>
     </div>
   );
