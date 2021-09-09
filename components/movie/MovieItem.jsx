@@ -46,10 +46,11 @@ function EventItem({ moviedetails }) {
                 </span>
               ))}
 
-              <span>
-                <img className="inline h-5 mr-1" src="/clock.png" alt="" />
+              <span className="h-5 ">
+                <Image height={17} width={17} src="/clock.png" alt="clock" />
                 {timeConvert(moviedetails.runtime)}
               </span>
+
               <p className="mt-5 italic text-gray-50">{moviedetails.tagline}</p>
               <div className="inline-flex mt-5">
                 <CircularProgressbar
