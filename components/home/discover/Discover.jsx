@@ -20,7 +20,7 @@ function Discover() {
 
   function handleSearch(event) {
     event.preventDefault();
-    router.push(`/search?query=${searchQuery}`);
+    router.push(`/search?page=1&search=${searchQuery}`);
   }
   return (
     <>
@@ -61,9 +61,3 @@ function Discover() {
 }
 
 export default Discover;
-
-// {
-//   /* style={{
-//   backgroundImage: `url('https://image.tmdb.org/t/p/w1280${bgImage}')`,
-// }} */
-// }

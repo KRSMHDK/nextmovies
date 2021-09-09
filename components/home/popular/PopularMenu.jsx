@@ -16,7 +16,9 @@ function PopularMenu({ popularMovies, upcomingMovies, topRatedMovies }) {
               {({ selected }) => (
                 <button
                   type="button"
-                  className={selected ? 'bg-blue-500/30 shadow px-2 rounded-xl' : 'text-black px-2'}
+                  className={
+                    selected ? 'bg-blue-500/30 font-bold shadow px-2 rounded-xl' : 'text-black px-2'
+                  }
                   value="popular"
                   onClick={() => setMovies(popularMovies)}
                 >
@@ -28,7 +30,9 @@ function PopularMenu({ popularMovies, upcomingMovies, topRatedMovies }) {
               {({ selected }) => (
                 <button
                   type="button"
-                  className={selected ? 'bg-blue-500/30 shadow px-2 rounded-xl' : 'text-black px-2'}
+                  className={
+                    selected ? 'bg-blue-500/30 font-bold shadow px-2 rounded-xl' : 'text-black px-2'
+                  }
                   value="upcoming"
                   onClick={() => setMovies(upcomingMovies)}
                 >
@@ -40,7 +44,9 @@ function PopularMenu({ popularMovies, upcomingMovies, topRatedMovies }) {
               {({ selected }) => (
                 <button
                   type="button"
-                  className={selected ? 'bg-blue-500/30 shadow px-2 rounded-xl' : 'text-black px-2'}
+                  className={
+                    selected ? 'bg-blue-500/30 font-bold shadow px-2 rounded-xl' : 'text-black px-2'
+                  }
                   value="Top Rated"
                   onClick={() => setMovies(topRatedMovies)}
                 >

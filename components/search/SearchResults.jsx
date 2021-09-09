@@ -3,14 +3,23 @@
 import React from 'react';
 import Link from 'next/link';
 import dateformat from 'dateformat';
+import Pagination from '@material-ui/lab/Pagination';
+import { useRouter } from 'next/router';
 
-function SearchResults({ results }) {
+function SearchResults({ results, searchQuery, pageNumber }) {
+  const pageTotal = Math.ceil(results.total_results / 20);
+  const router = useRouter();
+
+  const handleSearch = (event, value) => {
+    router.push(`/search?page=${value}&search=${searchQuery}`);
+  };
+
   return (
     <div className="flex-row md:flex">
       <div>
         <div className="pt-5 pl-5 pr-5">
           <p className="h-auto px-4 py-2 text-left text-white bg-blue-500 rounded-t-lg text-md md:w-52">
-            Search Results
+            Search Results for {searchQuery}
           </p>
           <p className="px-4 py-2 text-sm text-left border-b-2 md:w-52">
             Found {results.total_results} Movies
@@ -47,6 +56,13 @@ function SearchResults({ results }) {
             </li>
           ))}
         </ul>
+        <Pagination
+          count={pageTotal}
+          defaultPage={pageNumber}
+          onChange={handleSearch}
+          variant="outlined"
+          color="primary"
+        />
       </div>
     </div>
   );
