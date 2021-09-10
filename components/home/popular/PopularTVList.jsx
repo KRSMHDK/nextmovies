@@ -14,7 +14,7 @@ function PopulartvList({ tvs }) {
         {tvs.results.map((tv) => (
           <li key={tv.id} className="flex-none ml-2 ">
             <div className="relative">
-              <Link className="" href={`/tvs/${tv.id}`}>
+              <Link className="" href={`/tv/${tv.id}`}>
                 <Image
                   className="relative border rounded-lg cursor-pointer "
                   src={`https://image.tmdb.org/t/p/w500${tv.poster_path}`}

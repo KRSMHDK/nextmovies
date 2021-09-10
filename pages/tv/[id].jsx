@@ -6,9 +6,9 @@ import TvItem from '../../components/tv/TvItem';
 import Actors from '../../components/tv/Actors';
 import TvAPI from '../api/TvAPI';
 import Media from '../../components/tv/Media';
-import Recommendations from '../../components/Recommendations';
+// import Recommendations from '../../components/Recommendations';
 
-function TvPage({ tvDetails, actorsTvDetails, similarTvDetails }) {
+function TvPage({ tvDetails, actorsTvDetails }) {
   return (
     <>
       <Head>
@@ -17,7 +17,7 @@ function TvPage({ tvDetails, actorsTvDetails, similarTvDetails }) {
       <TvItem tvdetails={tvDetails} />
       <Actors actors={actorsTvDetails} />
       <Media tvDetails={tvDetails} />
-      <Recommendations recommendations={similarTvDetails} />
+      {/* <Recommendations recommendations={similarTvDetails} /> */}
     </>
   );
 }

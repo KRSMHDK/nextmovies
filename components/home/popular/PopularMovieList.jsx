@@ -13,7 +13,7 @@ function PopularMovieList({ movies }) {
         {movies.results.map((movie) => (
           <li key={movie.id} className="flex-none ml-2 ">
             <div className="relative">
-              <Link className="" href={`/movies/${movie.id}`}>
+              <Link className="" href={`/movie/${movie.id}`}>
                 <Image
                   className="relative border rounded-lg cursor-pointer "
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
