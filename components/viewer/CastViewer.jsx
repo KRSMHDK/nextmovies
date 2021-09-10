@@ -1,16 +1,15 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import Image from 'next/image';
 
-function Actors({ actors }) {
+function CastViewer({ cast }) {
   return (
     <div className="h-auto max-w-screen-xl pt-5 pl-5 mx-auto mt-2 ">
-      <p className="text-xl font-bold">Top Billed Cast </p>
+      <p className="text-xl font-bold">Cast </p>
       <ul className="flex flex-shrink-0 h-auto pb-5 mt-3 overflow-x-auto ">
-        {actors.cast.length === 0 ? (
-          <p>We don&apos;t have any cast added to this movie. </p>
+        {cast.cast.length === 0 ? (
+          <p>We don&apos;t have any cast added to this.</p>
         ) : (
-          actors.cast.map((actor) => (
+          cast.cast.map((actor) => (
             <li
               key={actor.name}
               className="flex-shrink-0 h-auto pb-2 mr-5 shadow-lg w-28 rounded-xl"
@@ -29,7 +28,12 @@ function Actors({ actors }) {
                 }
               />
               <p className="pl-2 text-sm font-bold text-left">{actor.name}</p>
-              <p className="pl-2 text-sm text-left ">{actor.character}</p>
+
+              {actor.total_episode_count ? (
+                <p className="pl-2 text-sm text-left ">{`${actor.total_episode_count} episodes`}</p>
+              ) : (
+                <p className="pl-2 text-sm text-left ">{actor.character}</p>
+              )}
             </li>
           ))
         )}
@@ -38,4 +42,4 @@ function Actors({ actors }) {
   );
 }
 
-export default Actors;
+export default CastViewer;

@@ -51,11 +51,11 @@ function PopularMovieList({ movies }) {
                 }}
               />
             </div>
-            <div className="w-40 pt-5 overflow-wrap">
+            <div className="w-40 pt-5 pl-2 overflow-wrap">
               <Link href={`/movie/${movie.id}`}>
-                <a className="pl-2 text-sm font-bold text-black">{movie.title}</a>
+                <a className="text-sm font-bold text-black ">{movie.title}</a>
               </Link>
-              <p className="pb-4 pl-2 text-sm font-light text-gray-600">
+              <p className="pb-4 text-sm font-light text-gray-600">
                 {dateformat(movie.release_date, 'mediumDate')}
               </p>
             </div>

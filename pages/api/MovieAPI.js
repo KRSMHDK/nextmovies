@@ -10,7 +10,7 @@ const MovieAPI = {
       )
       .catch((err) => err.response.status),
 
-  getActorsByMovieId: (id) =>
+  getCastByMovieId: (id) =>
     axios
       .get(`${SERVER_BASE_URL}${id}/credits?api_key=${process.env.API_KEY}&language=en-US`)
       .catch((err) => err.response.status),

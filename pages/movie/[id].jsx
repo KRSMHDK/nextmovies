@@ -1,24 +1,22 @@
-/* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable react/prop-types */
 import React from 'react';
 import Head from 'next/head';
-import MovieItem from '../../components/movie/MovieItem';
-import Actors from '../../components/movie/Actors';
 import MovieAPI from '../api/MovieAPI';
-import Media from '../../components/movie/Media';
-import Recommendations from '../../components/Recommendations';
+import Recommendations from '../../components/viewer/Recommendations';
+import ItemViewer from '../../components/viewer/ItemViewer';
+import CastViewer from '../../components/viewer/CastViewer';
+import MediaViewer from '../../components/viewer/MediaViewer';
 
-function MoviePage({ movieDetails, actorsDetails, recommendations }) {
+function MoviePage({ movieDetails, castDetails, recommendations }) {
   return (
     <>
       <Head>
         <title>{movieDetails.title} - NextMovies</title>
       </Head>
-      <MovieItem moviedetails={movieDetails} />
-      <Actors actors={actorsDetails} />
-      <Media movieDetails={movieDetails} />
 
-      <Recommendations recommendations={recommendations} />
+      <ItemViewer details={movieDetails} />
+      <CastViewer cast={castDetails} />
+      <MediaViewer details={movieDetails} />
+      <Recommendations recommendations={recommendations} type="movie" />
     </>
   );
 }
@@ -26,10 +24,10 @@ function MoviePage({ movieDetails, actorsDetails, recommendations }) {
 export async function getServerSideProps({ params }) {
   const { id } = params;
   const movieDetails = await MovieAPI.getMovieById(id);
-  const actorsDetails = await MovieAPI.getActorsByMovieId(id);
+  const castDetails = await MovieAPI.getCastByMovieId(id);
   const recommendations = await MovieAPI.getRecommendationByMovieID(id);
 
-  if (movieDetails === 404 || actorsDetails === 404) {
+  if (movieDetails === 404 || castDetails === 404) {
     return {
       notFound: true,
     };
@@ -38,7 +36,7 @@ export async function getServerSideProps({ params }) {
   return {
     props: {
       movieDetails: movieDetails.data,
-      actorsDetails: actorsDetails.data,
+      castDetails: castDetails.data,
       recommendations: recommendations.data,
     },
   };

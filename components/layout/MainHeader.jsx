@@ -12,7 +12,7 @@ function MainHeader() {
         </Link>
       </div>
       <div className="flex items-center flex-grow w-auto text-sm text-white">
-        <Link passHref href="/leo">
+        <Link passHref href="/">
           <a className="block mr-4 font-semibold">Movies</a>
         </Link>
       </div>

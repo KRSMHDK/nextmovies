@@ -1,9 +1,8 @@
-/* eslint-disable react/prop-types */
 import React, { Fragment, useState } from 'react';
 import Image from 'next/image';
 import { Tab } from '@headlessui/react';
 
-function Media({ movieDetails }) {
+function MediaViewer({ details }) {
   const backdrops = {
     type: 'backdrops',
     path: 'file_path',
@@ -73,19 +72,19 @@ function Media({ movieDetails }) {
         </Tab.List>
       </Tab.Group>
 
-      <ul className="flex mt-3 overflow-x-auto mb-11 rounded-xl">
-        {movieDetails.images[selectedType.type].length === 0 ? (
+      <ul className="flex mt-3 mb-6 overflow-x-auto rounded-xl">
+        {details.images[selectedType.type].length === 0 ? (
           <div>No Backdrops Found </div>
         ) : (
-          movieDetails.images[selectedType.type].map((movie) => (
-            <li key={movie[selectedType.path]} className="flex-shrink-0 ">
+          details.images[selectedType.type].map((item) => (
+            <li key={item[selectedType.path]} className="flex-shrink-0 ">
               <Image
                 className="mx-auto "
                 placeholder="blur"
                 blurDataURL="/images/blur.png"
                 width={selectedType.width}
                 height={selectedType.height}
-                src={`${selectedType.img_path}${movie[selectedType.path]}`}
+                src={`${selectedType.img_path}${item[selectedType.path]}`}
               />
             </li>
           ))
@@ -95,4 +94,4 @@ function Media({ movieDetails }) {
   );
 }
 
-export default Media;
+export default MediaViewer;
