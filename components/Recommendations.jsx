@@ -20,7 +20,7 @@ function Recommendations({ recommendations }) {
                 src={`https://www.themoviedb.org/t/p/w250_and_h141_face${rec.backdrop_path}`}
               />
             </Link>
-            <p>{rec.title}</p>
+            <p>{rec.title || rec.name}</p>
           </li>
         ))}
       </ul>

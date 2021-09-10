@@ -6,8 +6,9 @@ import TvItem from '../../components/tv/TvItem';
 import Actors from '../../components/tv/Actors';
 import TvAPI from '../api/TvAPI';
 import Media from '../../components/tv/Media';
+import Recommendations from '../../components/Recommendations';
 
-function TvPage({ tvDetails, actorsTvDetails }) {
+function TvPage({ tvDetails, actorsTvDetails, similarTvDetails }) {
   return (
     <>
       <Head>
@@ -16,6 +17,7 @@ function TvPage({ tvDetails, actorsTvDetails }) {
       <TvItem tvdetails={tvDetails} />
       <Actors actors={actorsTvDetails} />
       <Media tvDetails={tvDetails} />
+      <Recommendations recommendations={similarTvDetails} />
     </>
   );
 }
@@ -24,6 +26,7 @@ export async function getServerSideProps({ params }) {
   const { id } = params;
   const tvDetails = await TvAPI.getTvById(id);
   const actorsTvDetails = await TvAPI.getActorsByTvId(id);
+  const similarTvDetails = await TvAPI.getSimilarMovieByTvId(id);
 
   if (tvDetails === 404 || actorsTvDetails === 404) {
     return {
@@ -32,7 +35,11 @@ export async function getServerSideProps({ params }) {
   }
 
   return {
-    props: { tvDetails: tvDetails.data, actorsTvDetails: actorsTvDetails.data },
+    props: {
+      tvDetails: tvDetails.data,
+      actorsTvDetails: actorsTvDetails.data,
+      similarTvDetails: similarTvDetails.data,
+    },
   };
 }
 
