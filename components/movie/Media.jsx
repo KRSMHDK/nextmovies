@@ -83,11 +83,9 @@ function Media({ movieDetails }) {
                 className="mx-auto "
                 placeholder="blur"
                 blurDataURL="/images/blur.png"
-                width={533}
-                height={300}
-                src={`https://www.themoviedb.org/t/p/w533_and_h300_bestv2${
-                  movie[selectedType.path]
-                }`}
+                width={selectedType.width}
+                height={selectedType.height}
+                src={`${selectedType.img_path}${movie[selectedType.path]}`}
               />
             </li>
           ))
