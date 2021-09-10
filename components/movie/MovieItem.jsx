@@ -35,7 +35,7 @@ function EventItem({ moviedetails }) {
             <div className="pl-10 mx-auto mt-5 text-white ">
               <p className="mb-2 text-2xl font-semibold text-center sm:text-4xl sm:text-left">
                 {moviedetails.title}
-                <span className="font-extralight">({moviedetails.release_date.slice(0, 4)}) </span>
+                <span className="font-extralight"> ({moviedetails.release_date.slice(0, 4)}) </span>
               </p>
 
               {moviedetails.genres.map((genre) => (
