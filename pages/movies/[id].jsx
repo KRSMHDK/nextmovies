@@ -6,8 +6,9 @@ import MovieItem from '../../components/movie/MovieItem';
 import Actors from '../../components/movie/Actors';
 import MovieAPI from '../api/MovieAPI';
 import Media from '../../components/movie/Media';
+import Recommendations from '../../components/Recommendations';
 
-function MoviePage({ movieDetails, actorsDetails }) {
+function MoviePage({ movieDetails, actorsDetails, recommendations }) {
   return (
     <>
       <Head>
@@ -16,6 +17,7 @@ function MoviePage({ movieDetails, actorsDetails }) {
       <MovieItem moviedetails={movieDetails} />
       <Actors actors={actorsDetails} />
       <Media movieDetails={movieDetails} />
+      <Recommendations recommendations={recommendations} />
     </>
   );
 }
@@ -24,6 +26,7 @@ export async function getServerSideProps({ params }) {
   const { id } = params;
   const movieDetails = await MovieAPI.getMovieById(id);
   const actorsDetails = await MovieAPI.getActorsByMovieId(id);
+  const recommendations = await MovieAPI.getRecommendationByMovieID(id);
 
   if (movieDetails === 404 || actorsDetails === 404) {
     return {
@@ -32,7 +35,11 @@ export async function getServerSideProps({ params }) {
   }
 
   return {
-    props: { movieDetails: movieDetails.data, actorsDetails: actorsDetails.data },
+    props: {
+      movieDetails: movieDetails.data,
+      actorsDetails: actorsDetails.data,
+      recommendations: recommendations.data,
+    },
   };
 }
 export default MoviePage;

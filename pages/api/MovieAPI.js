@@ -31,6 +31,11 @@ const MovieAPI = {
     axios.get(
       `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&language=en-US&query=${search}&page=${page}&include_adult=false`,
     ),
+
+  getRecommendationByMovieID: (id) =>
+    axios.get(
+      `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${process.env.API_KEY}&language=en-US&page=1`,
+    ),
 };
 
 export default MovieAPI;
