@@ -17,6 +17,7 @@ function MoviePage({ movieDetails, actorsDetails, recommendations }) {
       <MovieItem moviedetails={movieDetails} />
       <Actors actors={actorsDetails} />
       <Media movieDetails={movieDetails} />
+
       <Recommendations recommendations={recommendations} />
     </>
   );

@@ -73,7 +73,7 @@ function Media({ movieDetails }) {
         </Tab.List>
       </Tab.Group>
 
-      <ul className="flex mt-3 overflow-x-scroll rounded-xl">
+      <ul className="flex mt-3 overflow-x-scroll mb-11 rounded-xl">
         {movieDetails.images[selectedType.type].length === 0 ? (
           <div>No Backdrops Found </div>
         ) : (
