@@ -33,7 +33,7 @@ function SearchResults({ results, searchQuery }) {
               className="flex min-h-0 mb-5 border-2 border-transparent rounded-lg shadow-md md:w-5/6 h-4/6"
               key={movie.id}
             >
-              <Link href={`/movies/${movie.id}`}>
+              <Link href={`/movie/${movie.id}`}>
                 <img
                   className="flex-none h-40 rounded-lg cursor-pointer w-28 "
                   src={
