@@ -24,7 +24,7 @@ function Discover() {
   }
   return (
     <>
-      <div className="relative w-full max-w-screen-xl mx-auto h-96 ">
+      <div className="relative z-50 w-full max-w-screen-xl mx-auto h-96 ">
         <Image
           className="bg-cover -z-10"
           layout="fill"
@@ -32,10 +32,10 @@ function Discover() {
           objectFit="cover"
           objectPosition="top"
         />
-        <div className="w-full h-full pt-12 pr-12 md:pt-24 from-green-900/30 to-blue-900/60 bg-gradient-to-r pl-11 ">
+        <div className="w-full h-full pt-12 pr-12 md:pt-24 from-green-900/30 to-blue-900/60 bg-gradient-to-r pl-11">
           <p className="text-5xl text-white">Welcome.</p>
 
-          <p className="text-3xl text-white">
+          <p className="text-3xl text-white ">
             Millions of movies, TV shows and people to discover. Explore now.
           </p>
           <form className="flex w-auto mt-10 p-auto " onSubmit={handleSearch}>

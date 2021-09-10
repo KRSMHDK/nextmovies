@@ -1,13 +1,10 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import 'tailwindcss/tailwind.css';
 import Layout from '../components/layout/Layout';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div>
+    <div className="bg-white ">
       <Layout>
         <Component {...pageProps} />
       </Layout>

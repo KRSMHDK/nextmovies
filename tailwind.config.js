@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       zIndex: {
         '-10': '-10',
+        '-20': '-20',
       },
       colors: {
         header: '#032541',

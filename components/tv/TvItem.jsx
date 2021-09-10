@@ -17,7 +17,7 @@ function EventItem({ tvdetails }) {
 
   return (
     <div>
-      <div className="relative mx-auto ">
+      <div className="relative z-50 mx-auto ">
         <Image
           className="-z-10"
           layout="fill"

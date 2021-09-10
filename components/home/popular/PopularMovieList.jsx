@@ -13,16 +13,18 @@ function PopularMovieList({ movies }) {
         {movies.results.map((movie) => (
           <li key={movie.id} className="flex-none ml-2 ">
             <div className="relative">
-              <Link className="" href={`/movie/${movie.id}`}>
-                <Image
-                  className="relative border rounded-lg cursor-pointer "
-                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                  alt=""
-                  width={150}
-                  height={224}
-                  placeholder="blur"
-                  blurDataURL="/images/blur.png"
-                />
+              <Link href={`/movie/${movie.id}`}>
+                <a>
+                  <Image
+                    className="relative border rounded-lg cursor-pointer "
+                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                    alt={movie.name}
+                    width={150}
+                    height={224}
+                    placeholder="blur"
+                    blurDataURL="/images/blur.png"
+                  />
+                </a>
               </Link>
               <CircularProgressbar
                 className="absolute h-11 -bottom-4 -left-14"
@@ -50,7 +52,9 @@ function PopularMovieList({ movies }) {
               />
             </div>
             <div className="w-40 pt-5 overflow-wrap">
-              <p className="pl-2 text-sm font-bold text-black">{movie.title}</p>
+              <Link href={`/movie/${movie.id}`}>
+                <a className="pl-2 text-sm font-bold text-black">{movie.title}</a>
+              </Link>
               <p className="pb-4 pl-2 text-sm font-light text-gray-600">
                 {dateformat(movie.release_date, 'mediumDate')}
               </p>
