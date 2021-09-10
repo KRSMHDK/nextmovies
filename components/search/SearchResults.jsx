@@ -45,7 +45,7 @@ function SearchResults({ results, searchQuery }) {
                 />
               </Link>
               <div className="pt-6 ml-4">
-                <Link href={`/movies/${movie.id}`}>
+                <Link href={`/movie/${movie.id}`}>
                   <p className="font-bold cursor-pointer text-md">{movie.title}</p>
                 </Link>
                 <p className="mb-4 text-sm font-light">
