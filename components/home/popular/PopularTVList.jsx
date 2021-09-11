@@ -39,7 +39,7 @@ function PopulartvList({ tvs }) {
                     strokeLinecap: 'butt',
                   },
                   trail: {
-                    stroke: '#ffffff',
+                    stroke: '#666464be',
                   },
                   text: {
                     fill: '#fff',

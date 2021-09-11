@@ -40,15 +40,15 @@ function ItemViewer({ details }) {
                   details.release_date ? details.release_date : details.first_air_date,
                   'paddedShortDate',
                 )}
-              </span>{' '}
-              -{' '}
+              </span>
+              <span> - </span>
               {details.genres.map((genre, index) => (
                 <span className="inline " key={genre.name}>
                   {genre.name}
                   {index < details.genres.length - 1 ? ', ' : ''}
                 </span>
-              ))}{' '}
-              -{' '}
+              ))}
+              <span> - </span>
               <span className="">
                 {timeConverter(details.runtime || details.episode_run_time[0])}
               </span>
@@ -67,7 +67,7 @@ function ItemViewer({ details }) {
                       strokeLinecap: 'butt',
                     },
                     trail: {
-                      stroke: '#ffffff',
+                      stroke: '#666464be',
                     },
                     text: {
                       fill: '#fff',

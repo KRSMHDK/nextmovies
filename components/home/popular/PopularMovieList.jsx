@@ -40,10 +40,10 @@ function PopularMovieList({ movies }) {
                     strokeLinecap: 'butt',
                   },
                   trail: {
-                    stroke: '#ffffff',
+                    stroke: '#666464be',
                   },
                   text: {
-                    fill: '#fff',
+                    fill: '#ffffff',
                     fontSize: '26px',
                   },
                   background: {
