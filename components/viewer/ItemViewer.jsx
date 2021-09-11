@@ -53,6 +53,7 @@ function ItemViewer({ details, countryCode, type }) {
               }
               alt={details[category.title]}
             />
+
             <div className="pl-10 mx-auto mt-5 text-white ">
               <p className="text-2xl font-semibold text-center sm:text-4xl sm:text-left">
                 {details[category.title]}{' '}
@@ -63,28 +64,32 @@ function ItemViewer({ details, countryCode, type }) {
                   `}
                 </span>
               </p>
-              {certification && (
-                <span className="px-1 py-1 mr-1 text-xs text-gray-300 border-2 border-gray-300 ">
-                  {certification}{' '}
+
+              <div className="mt-10 text-sm sm:mt-2">
+                {certification && (
+                  <span className="px-1 py-1 mr-1 text-xs text-gray-300 border-2 border-gray-300 ">
+                    {certification}{' '}
+                  </span>
+                )}
+                <span className="hidden mr-2 sm:inline">
+                  {details[category.release_date] &&
+                    dateformat(details[category.release_date], 'paddedShortDate')}{' '}
+                  {country && <span> ({country})</span>}
                 </span>
-              )}
-              <span className="mr-2">
-                {details[category.release_date] &&
-                  dateformat(details[category.release_date], 'paddedShortDate')}{' '}
-                {country && <span> ({country})</span>}
-              </span>
-              <span> - </span>
-              {details.genres.map((genre, index) => (
-                <span className="inline " key={genre.name}>
-                  {genre.name}
-                  {index < details.genres.length - 1 ? ', ' : ''}
+                <span> - </span>
+                {details.genres.map((genre, index) => (
+                  <span className="inline " key={genre.name}>
+                    {genre.name}
+                    {index < details.genres.length - 1 ? ', ' : ''}
+                  </span>
+                ))}
+                <span> - </span>
+                <span className="">
+                  {details[category.runtime] &&
+                    timeConverter(details[category.runtime] || details[category.runtime][0])}
                 </span>
-              ))}
-              <span> - </span>
-              <span className="">
-                {details[category.runtime] &&
-                  timeConverter(details[category.runtime] || details[category.runtime][0])}
-              </span>
+              </div>
+
               <p className="mt-5 italic text-gray-300">{details.tagline}</p>
               <div className="inline-flex mt-5">
                 <CircularProgressbar
