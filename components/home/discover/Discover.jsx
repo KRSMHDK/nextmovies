@@ -28,7 +28,7 @@ function Discover() {
         <Image
           className="bg-cover -z-10"
           layout="fill"
-          src={`https://image.tmdb.org/t/p/w1280${bgImage}`}
+          src={`https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces${bgImage}`}
           objectFit="cover"
           objectPosition="top"
           unoptimized={true}
