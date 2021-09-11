@@ -11,6 +11,7 @@ function ItemViewer({ details }) {
         <Image
           className="-z-10"
           layout="fill"
+          unoptimized={true}
           src={`https://image.tmdb.org/t/p/w1280${details.backdrop_path}`}
           objectFit="cover"
           objectPosition="top"

@@ -19,6 +19,7 @@ function Recommendations({ recommendations, type }) {
                     <Image
                       className="mx-auto cursor-pointer"
                       placeholder="blur"
+                      unoptimized={true}
                       blurDataURL="/images/blur.png"
                       width={250}
                       height={141}

@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import dateformat from 'dateformat';
 import Pagination from '@material-ui/lab/Pagination';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 function SearchResults({ results, searchQuery }) {
@@ -34,14 +35,17 @@ function SearchResults({ results, searchQuery }) {
               key={movie.id}
             >
               <Link href={`/movie/${movie.id}`}>
-                <img
-                  className="flex-none h-40 rounded-lg cursor-pointer w-28 "
+                <Image
+                  className="flex-none rounded-lg cursor-pointer"
+                  height={160}
+                  width={112}
+                  unoptimized={true}
                   src={
                     movie.poster_path === null
                       ? 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'
                       : `https://image.tmdb.org/t/p/w500${movie.poster_path}`
                   }
-                  alt=""
+                  alt={movie.title}
                 />
               </Link>
               <div className="pt-6 ml-4">

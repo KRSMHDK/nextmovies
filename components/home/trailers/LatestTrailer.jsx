@@ -30,6 +30,7 @@ function PopularTrailer({ latestTrailer }) {
                         src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
                         alt=""
                         height={192}
+                        unoptimized={true}
                         width={288}
                         placeholder="blur"
                         blurDataURL="/images/blur.png"

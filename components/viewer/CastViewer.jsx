@@ -16,6 +16,7 @@ function CastViewer({ cast }) {
             >
               <Image
                 className="mx-auto rounded-t-xl"
+                unoptimized={true}
                 width={112}
                 height={142}
                 alt={actor.name}

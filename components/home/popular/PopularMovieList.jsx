@@ -17,8 +17,9 @@ function PopularMovieList({ movies }) {
                 <a>
                   <Image
                     className="relative border rounded-lg cursor-pointer "
+                    unoptimized={true}
                     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                    alt={movie.name}
+                    alt={movie.title}
                     width={150}
                     height={224}
                     placeholder="blur"

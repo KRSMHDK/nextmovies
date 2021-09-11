@@ -81,6 +81,7 @@ function MediaViewer({ details }) {
               <Image
                 className="mx-auto "
                 placeholder="blur"
+                unoptimized
                 blurDataURL="/images/blur.png"
                 width={selectedType.width}
                 height={selectedType.height}
