@@ -3,6 +3,7 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import Image from 'next/image';
 import timeConverter from '../../lib/utils/timeConverter';
+import dateformat from 'dateformat';
 
 function ItemViewer({ details }) {
   return (
@@ -24,9 +25,9 @@ function ItemViewer({ details }) {
               alt={details.title || details.name}
             />
             <div className="pl-10 mx-auto mt-5 text-white ">
-              <p className="mb-2 text-2xl font-semibold text-center sm:text-4xl sm:text-left">
-                {details.title || details.name}
-                <span className="font-extralight">
+              <p className="text-2xl font-semibold text-center sm:text-4xl sm:text-left">
+                {details.title || details.name}{' '}
+                <span className="font-light">
                   (
                   {details.release_date
                     ? details.release_date.slice(0, 4)
@@ -34,25 +35,27 @@ function ItemViewer({ details }) {
                   )
                 </span>
               </p>
-
-              {details.genres.map((genre) => (
-                <span
-                  className="inline px-1 mr-1 text-black bg-yellow-500 border border-red-600 rounded "
-                  key={genre.name}
-                >
+              <span className="mr-2">
+                {dateformat(
+                  details.release_date ? details.release_date : details.first_air_date,
+                  'paddedShortDate',
+                )}
+              </span>{' '}
+              -{' '}
+              {details.genres.map((genre, index) => (
+                <span className="inline " key={genre.name}>
                   {genre.name}
+                  {index < details.genres.length - 1 ? ', ' : ''}
                 </span>
-              ))}
-
-              <span className="h-5 text-sm align-middle">
-                <Image height={17} width={17} src="/clock.png" alt="clock" />
+              ))}{' '}
+              -{' '}
+              <span className="">
                 {timeConverter(details.runtime || details.episode_run_time[0])}
               </span>
-
               <p className="mt-5 italic text-gray-300">{details.tagline}</p>
               <div className="inline-flex mt-5">
                 <CircularProgressbar
-                  className="h-20"
+                  className="h-16"
                   background
                   strokeWidth={7}
                   backgroundPadding={6}
@@ -78,7 +81,6 @@ function ItemViewer({ details }) {
 
                 <span className="w-20 pl-1 m-auto font-bold "> User Score</span>
               </div>
-
               <p className="mt-4 mb-3 text-2xl">Overview</p>
               <p className="">{details.overview}</p>
             </div>
