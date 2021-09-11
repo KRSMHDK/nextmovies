@@ -6,14 +6,14 @@ import ItemViewer from '../../components/viewer/ItemViewer';
 import CastViewer from '../../components/viewer/CastViewer';
 import MediaViewer from '../../components/viewer/MediaViewer';
 
-function MoviePage({ movieDetails, castDetails, recommendations }) {
+function MoviePage({ movieDetails, castDetails, recommendations, countryCode }) {
   return (
     <>
       <Head>
         <title>{movieDetails.title} - NextMovies</title>
       </Head>
 
-      <ItemViewer details={movieDetails} />
+      <ItemViewer details={movieDetails} countryCode={countryCode} type="movie" />
       <CastViewer cast={castDetails} />
       <MediaViewer details={movieDetails} />
       <Recommendations recommendations={recommendations} type="movie" />
@@ -27,6 +27,8 @@ export async function getServerSideProps({ params }) {
   const castDetails = await MovieAPI.getCastByMovieId(id);
   const recommendations = await MovieAPI.getRecommendationByMovieID(id);
 
+  const countryCode = await fetch('https://extreme-ip-lookup.com/json/').then((res) => res.json());
+
   if (movieDetails === 404 || castDetails === 404) {
     return {
       notFound: true,
@@ -38,6 +40,7 @@ export async function getServerSideProps({ params }) {
       movieDetails: movieDetails.data,
       castDetails: castDetails.data,
       recommendations: recommendations.data,
+      countryCode: countryCode.countryCode,
     },
   };
 }

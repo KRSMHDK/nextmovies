@@ -1,11 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import Image from 'next/image';
 import timeConverter from '../../lib/utils/timeConverter';
 import dateformat from 'dateformat';
+import rating from '../../lib/utils/rating';
 
-function ItemViewer({ details }) {
+function ItemViewer({ details, countryCode, type }) {
+  const movie = {
+    title: 'title',
+    release_date: 'release_date',
+    runtime: 'runtime',
+  };
+
+  const tv = {
+    title: 'name',
+    release_date: 'first_air_date',
+    runtime: 'episode_run_time',
+  };
+
+  const { country, certification } = rating(details, countryCode, type);
+  const [category, setCategory] = useState([]);
+
+  useEffect(() => {
+    if (type === 'movie') {
+      setCategory(movie);
+    } else {
+      setCategory(tv);
+    }
+  }, []);
+
   return (
     <div>
       <div className="relative z-50 mx-auto">
@@ -17,29 +41,37 @@ function ItemViewer({ details }) {
           objectFit="cover"
           objectPosition="top"
         />
+
         <div className="pt-12 pb-12 pr-5 bg-black sm:flex sm:pr-24 sm:pl-72 bg-opacity-70">
           <div className="relative flex flex-col text-white sm:flex-row">
             <img
               className="z-20 w-48 mx-auto border-black sm:static sm:w-64 sm:h-96 sm:flex rounded-2xl"
-              src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${details.poster_path}`}
-              alt={details.title || details.name}
+              src={
+                details.poster_path === null
+                  ? 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'
+                  : `https://image.tmdb.org/t/p/w300_and_h450_bestv2${details.poster_path}`
+              }
+              alt={details[category.title]}
             />
             <div className="pl-10 mx-auto mt-5 text-white ">
               <p className="text-2xl font-semibold text-center sm:text-4xl sm:text-left">
-                {details.title || details.name}{' '}
+                {details[category.title]}{' '}
                 <span className="font-light">
-                  (
-                  {details.release_date
-                    ? details.release_date.slice(0, 4)
-                    : details.first_air_date.slice(0, 4)}
-                  )
+                  {details[category.release_date] &&
+                    `
+                    (${details[category.release_date].slice(0, 4)})
+                  `}
                 </span>
               </p>
+              {certification && (
+                <span className="px-1 py-1 mr-1 text-xs text-gray-300 border-2 border-gray-300 ">
+                  {certification}{' '}
+                </span>
+              )}
               <span className="mr-2">
-                {dateformat(
-                  details.release_date ? details.release_date : details.first_air_date,
-                  'paddedShortDate',
-                )}
+                {details[category.release_date] &&
+                  dateformat(details[category.release_date], 'paddedShortDate')}{' '}
+                {country && <span> ({country})</span>}
               </span>
               <span> - </span>
               {details.genres.map((genre, index) => (
@@ -50,7 +82,8 @@ function ItemViewer({ details }) {
               ))}
               <span> - </span>
               <span className="">
-                {timeConverter(details.runtime || details.episode_run_time[0])}
+                {details[category.runtime] &&
+                  timeConverter(details[category.runtime] || details[category.runtime][0])}
               </span>
               <p className="mt-5 italic text-gray-300">{details.tagline}</p>
               <div className="inline-flex mt-5">

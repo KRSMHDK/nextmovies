@@ -36,18 +36,20 @@ function SearchResults({ results, searchQuery }) {
             >
               <div className="flex-shrink-0">
                 <Link href={`/movie/${movie.id}`}>
-                  <Image
-                    className="cursor-pointer frounded-lg"
-                    height={141}
-                    width={94}
-                    unoptimized={true}
-                    src={
-                      movie.poster_path === null
-                        ? 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'
-                        : `https://www.themoviedb.org/t/p/w94_and_h141_bestv2${movie.poster_path}`
-                    }
-                    alt={movie.title}
-                  />
+                  <a>
+                    <Image
+                      className="cursor-pointer frounded-lg"
+                      height={141}
+                      width={94}
+                      unoptimized={true}
+                      src={
+                        movie.poster_path === null
+                          ? 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'
+                          : `https://www.themoviedb.org/t/p/w94_and_h141_bestv2${movie.poster_path}`
+                      }
+                      alt={movie.title}
+                    />
+                  </a>
                 </Link>
               </div>
               <div className="pt-6 ml-4">

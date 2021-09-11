@@ -6,14 +6,14 @@ import CastViewer from '../../components/viewer/CastViewer';
 import Recommendations from '../../components/viewer/Recommendations';
 import MediaViewer from '../../components/viewer/MediaViewer';
 
-function TvPage({ tvDetails, castTvDetails, similarTvDetails }) {
+function TvPage({ tvDetails, castTvDetails, similarTvDetails, countryCode }) {
   return (
     <>
       <Head>
         <title>{tvDetails.name} - NextMovies</title>
       </Head>
 
-      <ItemViewer details={tvDetails} />
+      <ItemViewer details={tvDetails} countryCode={countryCode} type="tv" />
       <CastViewer cast={castTvDetails} />
       <MediaViewer details={tvDetails} />
       <Recommendations recommendations={similarTvDetails} type="tv" />
@@ -27,6 +27,8 @@ export async function getServerSideProps({ params }) {
   const castTvDetails = await TvAPI.getCastByTvId(id);
   const similarTvDetails = await TvAPI.getSimilarMovieByTvId(id);
 
+  const countryCode = await fetch('https://extreme-ip-lookup.com/json/').then((res) => res.json());
+
   if (tvDetails === 404 || castTvDetails === 404) {
     return {
       notFound: true,
@@ -38,6 +40,7 @@ export async function getServerSideProps({ params }) {
       tvDetails: tvDetails.data,
       castTvDetails: castTvDetails.data,
       similarTvDetails: similarTvDetails.data,
+      countryCode: countryCode.countryCode,
     },
   };
 }

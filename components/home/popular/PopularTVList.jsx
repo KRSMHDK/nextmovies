@@ -15,16 +15,18 @@ function PopulartvList({ tvs }) {
           <li key={tv.id} className="flex-none ml-2 ">
             <div className="relative">
               <Link href={`/tv/${tv.id}`}>
-                <Image
-                  unoptimized={true}
-                  className="relative border rounded-lg cursor-pointer "
-                  src={`https://image.tmdb.org/t/p/w500${tv.poster_path}`}
-                  alt={tv.name}
-                  width={150}
-                  height={224}
-                  placeholder="blur"
-                  blurDataURL="/images/blur.png"
-                />
+                <a>
+                  <Image
+                    unoptimized={true}
+                    className="relative border rounded-lg cursor-pointer "
+                    src={`https://image.tmdb.org/t/p/w500${tv.poster_path}`}
+                    alt={tv.name}
+                    width={150}
+                    height={224}
+                    placeholder="blur"
+                    blurDataURL="/images/blur.png"
+                  />
+                </a>
               </Link>
               <CircularProgressbar
                 className="absolute h-11 -bottom-4 -left-14"
