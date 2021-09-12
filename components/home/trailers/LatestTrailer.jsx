@@ -11,6 +11,7 @@ function PopularTrailer({ latestTrailer }) {
   const [movies] = useState(latestTrailer);
   const [open, setOpen] = useState(false);
   const [video, setVideo] = useState('');
+  const [bg, setbg] = useState();
   const onOpenModal = (video) => {
     setVideo(video);
     setOpen(true);
@@ -41,6 +42,7 @@ function PopularTrailer({ latestTrailer }) {
           url={`https://www.youtube.com/watch?v=${video}`}
           width="100%"
           height="calc(80vh - 100px)"
+          playing={true}
           controls={true}
         />
       </Modal>
