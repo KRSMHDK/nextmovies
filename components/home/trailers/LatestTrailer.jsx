@@ -11,7 +11,7 @@ function PopularTrailer({ latestTrailer }) {
   const [movies] = useState(latestTrailer);
   const [open, setOpen] = useState(false);
   const [video, setVideo] = useState('');
-  const [bg, setbg] = useState();
+  const [bg, setBg] = useState('4N6zEMfZ57zNEQcM8gWeERFupMv.jpg');
   const onOpenModal = (video) => {
     setVideo(video);
     setOpen(true);
@@ -49,8 +49,8 @@ function PopularTrailer({ latestTrailer }) {
       <div
         className="max-w-screen-xl mx-auto bg-no-repeat bg-cover"
         style={{
-          backgroundImage:
-            'url("https://www.themoviedb.org/t/p/w1920_and_h427_multi_faces/4N6zEMfZ57zNEQcM8gWeERFupMv.jpg")',
+          backgroundImage: `url('https://www.themoviedb.org/t/p/w1920_and_h427_multi_faces/${bg}')`,
+          transition: '0.6s',
         }}
       >
         <div className="flex-none bg-gray-900 bg-opacity-70 ">
@@ -59,7 +59,12 @@ function PopularTrailer({ latestTrailer }) {
             {movies.map(
               (movie) =>
                 movie.videos.results[0] !== undefined && (
-                  <li key={movie.id} className="flex-none h-48 ml-5 w-72">
+                  <li
+                    key={movie.id}
+                    onMouseOver={() => setBg(movie.backdrop_path)}
+                    onClick={() => setBg(movie.backdrop_path)}
+                    className="flex-none h-48 ml-5 w-72"
+                  >
                     <Image
                       onClick={() => onOpenModal(movie.videos.results[0].key)}
                       className="duration-300 rounded-lg hover:scale-105"
