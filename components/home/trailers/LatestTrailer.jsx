@@ -1,6 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable function-paren-newline */
-/* eslint-disable implicit-arrow-linebreak */
 import Link from 'next/link';
 import React, { useState } from 'react';
 import Image from 'next/image';
@@ -11,7 +8,7 @@ function PopularTrailer({ latestTrailer }) {
   const [movies] = useState(latestTrailer);
   const [open, setOpen] = useState(false);
   const [video, setVideo] = useState('');
-  const [bg, setBg] = useState('4N6zEMfZ57zNEQcM8gWeERFupMv.jpg');
+  const [bg, setBg] = useState('/4N6zEMfZ57zNEQcM8gWeERFupMv.jpg');
   const onOpenModal = (video) => {
     setVideo(video);
     setOpen(true);
@@ -47,13 +44,13 @@ function PopularTrailer({ latestTrailer }) {
         />
       </Modal>
       <div
-        className="max-w-screen-xl mx-auto bg-no-repeat bg-cover"
+        className="max-w-screen-xl mx-auto bg-no-repeat "
         style={{
-          backgroundImage: `url('https://www.themoviedb.org/t/p/w1920_and_h427_multi_faces/${bg}')`,
+          backgroundImage: `url('https://www.themoviedb.org/t/p/w1920_and_h427_multi_faces_filter(duotone,032541,01b4e4)${bg}')`,
           transition: '0.6s',
         }}
       >
-        <div className="flex-none bg-gray-900 bg-opacity-70 ">
+        <div className="flex-none ">
           <p className="pt-5 pb-3 pl-5 text-2xl text-white">Latest Trailers</p>
           <ul className="flex overflow-x-scroll h-72 ">
             {movies.map(
@@ -65,19 +62,30 @@ function PopularTrailer({ latestTrailer }) {
                     onClick={() => setBg(movie.backdrop_path)}
                     className="flex-none h-48 ml-5 w-72"
                   >
-                    <Image
-                      onClick={() => onOpenModal(movie.videos.results[0].key)}
-                      className="duration-300 rounded-lg hover:scale-105"
-                      src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
-                      alt=""
-                      height={192}
-                      unoptimized={true}
-                      width={288}
-                      placeholder="blur"
-                      blurDataURL="/images/blur.png"
-                    />
+                    <div className="relative duration-300 hover:scale-105">
+                      <Image
+                        onClick={() => onOpenModal(movie.videos.results[0].key)}
+                        className="rounded-lg "
+                        src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
+                        alt=""
+                        height={192}
+                        unoptimized={true}
+                        width={288}
+                        placeholder="blur"
+                        blurDataURL="/images/blur.png"
+                      />
+                      <svg
+                        className="absolute h-16 text-white fill-current left-28 top-16 "
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 32 32"
+                      >
+                        <path d="M24.817 16.864 9.503 25.777A1 1 0 0 1 8 24.912V7.088a1 1 0 0 1 1.503-.865l15.314 8.913a1 1 0 0 1 0 1.728Z" />
+                      </svg>
+                    </div>
 
-                    <p className="flex-wrap text-center text-white align-center">{movie.title}</p>
+                    <Link href={`/movie/${movie.id}`}>
+                      <a className="flex-wrap text-center text-white align-center">{movie.title}</a>
+                    </Link>
                   </li>
                 ),
             )}

@@ -34,14 +34,14 @@ function Discover() {
           unoptimized={true}
         />
         <div className="w-full h-full pt-12 pr-12 md:pt-24 from-green-900/30 to-blue-900/60 bg-gradient-to-r pl-11">
-          <p className="text-5xl text-white">Welcome.</p>
+          <p className="text-5xl font-semibold text-white">Welcome.</p>
 
-          <p className="text-3xl text-white ">
+          <p className="text-3xl font-semibold text-white ">
             Millions of movies, TV shows and people to discover. Explore now.
           </p>
           <form className="flex w-auto mt-10 p-auto " onSubmit={handleSearch}>
             <input
-              className="z-10 w-full h-10 px-3 text-gray-700 border-2 rounded-l-lg focus:outline-none focus:shadow-outline"
+              className="z-10 w-full h-10 px-3 text-gray-700 border-2 rounded-l-full focus:outline-none focus:shadow-outline"
               id="Movie"
               type="text"
               value={searchQuery}
