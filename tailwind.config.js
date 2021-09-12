@@ -11,6 +11,9 @@ module.exports = {
       colors: {
         header: '#032541',
       },
+      padding: {
+        'p-60%': '60%',
+      },
     },
   },
   variants: {
