@@ -62,9 +62,11 @@ function PopularTrailer({ latestTrailer }) {
                     onClick={() => setBg(movie.backdrop_path)}
                     className="flex-none h-48 ml-5 w-72"
                   >
-                    <div className="relative duration-300 hover:scale-105">
+                    <div
+                      onClick={() => onOpenModal(movie.videos.results[0].key)}
+                      className="relative duration-300 cursor-pointer hover:scale-105"
+                    >
                       <Image
-                        onClick={() => onOpenModal(movie.videos.results[0].key)}
                         className="rounded-lg "
                         src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
                         alt=""
