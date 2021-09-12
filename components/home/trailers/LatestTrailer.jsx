@@ -35,6 +35,7 @@ function PopularTrailer({ latestTrailer }) {
         }}
         center
       >
+        <div className="bg-black h-9"></div>
         <ReactPlayer
           url={`https://www.youtube.com/watch?v=${video}`}
           width="100%"
