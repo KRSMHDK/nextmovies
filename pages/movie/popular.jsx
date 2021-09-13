@@ -9,7 +9,7 @@ function MoviePopularPage({ popularMovies }) {
       <Head>
         <title>Popular Movies - NextMovies</title>
       </Head>
-      <CategoryViewer results={popularMovies} category="popular" type="Popular" />
+      <CategoryViewer results={popularMovies} id="movie" category="popular" type="Popular Movies" />
     </>
   );
 }

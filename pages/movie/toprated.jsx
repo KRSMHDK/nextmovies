@@ -3,13 +3,18 @@ import Head from 'next/head';
 import MovieAPI from '../api/MovieAPI';
 import CategoryViewer from '../../components/viewer/CategoryViewer';
 
-function MoviePopularPage({ topRatedMovies }) {
+function MovieTopRatedPage({ topRatedMovies }) {
   return (
     <>
       <Head>
         <title>Top Rated Movies - NextMovies</title>
       </Head>
-      <CategoryViewer results={topRatedMovies} category="toprated" type="Top-Rated" />
+      <CategoryViewer
+        results={topRatedMovies}
+        id="movie"
+        category="toprated"
+        type="Top-Rated Movies"
+      />
     </>
   );
 }
@@ -30,4 +35,4 @@ export async function getServerSideProps({ query }) {
     },
   };
 }
-export default MoviePopularPage;
+export default MovieTopRatedPage;

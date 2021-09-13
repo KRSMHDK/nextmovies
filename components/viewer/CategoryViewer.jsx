@@ -9,17 +9,17 @@ import { useRouter } from 'next/router';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-function SearchResults({ results, category, type }) {
+function SearchResults({ results, category, type, id }) {
   const pageTotal = Math.ceil(results.total_results / 20);
   const router = useRouter();
 
   const handleSearch = (event, value) => {
-    router.push(`/movie/${category}/?page=${value}`);
+    router.push(`/${id}/${category}/?page=${value}`);
   };
 
   return (
     <div className="container px-10 py-10 mx-auto">
-      <p className="text-2xl font-bold"> {type} Movies</p>
+      <p className="text-2xl font-bold"> {type}</p>
       <div className="flex-row md:flex ">
         <form>
           <div className="pt-5 pr-5">
@@ -45,7 +45,7 @@ function SearchResults({ results, category, type }) {
                 key={movie.id}
               >
                 <div className="relative">
-                  <Link href={`/movie/${movie.id}`}>
+                  <Link href={`/${id}/${movie.id}`}>
                     <a>
                       <Image
                         className="rounded-t-lg cursor-pointer"
@@ -57,7 +57,7 @@ function SearchResults({ results, category, type }) {
                             ? 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'
                             : `https://www.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`
                         }
-                        alt={movie.title}
+                        alt={movie.title || movie.name}
                       />
                     </a>
                   </Link>
@@ -87,8 +87,8 @@ function SearchResults({ results, category, type }) {
                   />
                 </div>
                 <div className="pt-6 ml-4">
-                  <Link href={`/movie/${movie.id}`}>
-                    <p className="text-sm font-bold cursor-pointer">{movie.title}</p>
+                  <Link href={`/${id}/${movie.id}`}>
+                    <p className="text-sm font-bold cursor-pointer">{movie.title || movie.name}</p>
                   </Link>
                   <p className="mb-4 text-sm font-light">
                     {dateformat(movie.release_date, 'longDate')}

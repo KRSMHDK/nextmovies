@@ -3,13 +3,18 @@ import Head from 'next/head';
 import MovieAPI from '../api/MovieAPI';
 import CategoryViewer from '../../components/viewer/CategoryViewer';
 
-function MoviePopularPage({ upcomingMovies }) {
+function MovieUpcomingPage({ upcomingMovies }) {
   return (
     <>
       <Head>
         <title>Upcoming Movies - NextMovies</title>
       </Head>
-      <CategoryViewer results={upcomingMovies} category="upcoming" type="Upcoming" />
+      <CategoryViewer
+        results={upcomingMovies}
+        id="movie"
+        category="upcoming"
+        type="Upcoming Movies"
+      />
     </>
   );
 }
@@ -30,4 +35,4 @@ export async function getServerSideProps({ query }) {
     },
   };
 }
-export default MoviePopularPage;
+export default MovieUpcomingPage;
