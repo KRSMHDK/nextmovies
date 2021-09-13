@@ -17,9 +17,9 @@ function MainHeader() {
           <nav className="absolute left-0 z-50 invisible max-w-xl transition-all bg-white border-2 rounded-lg opacity-0 top-full group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-1">
             <ul className="py-1 ">
               <li>
-                <Link href="/movie/popular">
-                  <a className="block px-4 py-2 hover:bg-gray-100">Popular</a>
-                </Link>
+                <a href="/movie/popular" className="block px-4 py-2 hover:bg-gray-100">
+                  Popular
+                </a>
               </li>
               <li>
                 <a href="/movie/upcoming" className="block px-4 py-2 hover:bg-gray-100">
@@ -44,9 +44,9 @@ function MainHeader() {
         <nav className="absolute left-0 z-50 invisible max-w-xl transition-all bg-white border-2 rounded-lg opacity-0 top-full group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-1">
           <ul className="py-1 ">
             <li>
-              <Link href="/tv/popular">
-                <a className="block px-4 py-2 whitespace-nowrap hover:bg-gray-100">Popular</a>
-              </Link>
+              <a href="/tv/popular" className="block px-4 py-2 whitespace-nowrap hover:bg-gray-100">
+                Popular
+              </a>
             </li>
             <li>
               <a
