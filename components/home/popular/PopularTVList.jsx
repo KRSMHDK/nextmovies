@@ -14,7 +14,7 @@ function PopulartvList({ tvs }) {
         {tvs.results.map((tv) => (
           <li key={tv.id} className="flex-none ml-2 ">
             <div className="relative">
-              <Link href={`/tv/${tv.id}`}>
+              <Link href={`/tv/${tv.id}`} passHref>
                 <a>
                   <Image
                     unoptimized={true}

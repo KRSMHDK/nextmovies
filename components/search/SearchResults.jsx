@@ -35,7 +35,7 @@ function SearchResults({ results, searchQuery }) {
               key={movie.id}
             >
               <div className="flex-shrink-0">
-                <Link href={`/movie/${movie.id}`}>
+                <Link href={`/movie/${movie.id} `} passHref>
                   <a>
                     <Image
                       className="rounded-lg cursor-pointer"
@@ -53,7 +53,7 @@ function SearchResults({ results, searchQuery }) {
                 </Link>
               </div>
               <div className="pt-6 ml-4">
-                <Link href={`/movie/${movie.id}`}>
+                <Link href={`/movie/${movie.id}`} passHref>
                   <p className="font-bold cursor-pointer text-md">{movie.title}</p>
                 </Link>
                 <p className="mb-4 text-sm font-light">

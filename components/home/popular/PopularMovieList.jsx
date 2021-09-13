@@ -13,7 +13,7 @@ function PopularMovieList({ movies }) {
         {movies.results.map((movie) => (
           <li key={movie.id} className="flex-none ml-2 ">
             <div className="relative">
-              <Link href={`/movie/${movie.id}`}>
+              <Link href={`/movie/${movie.id}`} passHref>
                 <a>
                   <Image
                     className="relative border rounded-lg cursor-pointer "
@@ -53,7 +53,7 @@ function PopularMovieList({ movies }) {
               />
             </div>
             <div className="w-40 pt-5 pl-2 overflow-wrap">
-              <Link href={`/movie/${movie.id}`}>
+              <Link href={`/movie/${movie.id}`} passHref>
                 <a className="text-sm font-bold text-black ">{movie.title}</a>
               </Link>
               <p className="pb-4 text-sm font-light text-gray-600">

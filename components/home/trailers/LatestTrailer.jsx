@@ -86,7 +86,7 @@ function PopularTrailer({ latestTrailer }) {
                       </svg>
                     </div>
 
-                    <Link href={`/movie/${movie.id}`}>
+                    <Link href={`/movie/${movie.id}`} passHref>
                       <a>
                         <p className="font-semibold text-center text-white ">{movie.title}</p>
                       </a>

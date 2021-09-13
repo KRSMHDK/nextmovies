@@ -76,14 +76,14 @@ function ItemViewer({ details, countryCode, type }) {
                     dateformat(details[category.release_date], 'paddedShortDate')}{' '}
                   {country && <span> ({country})</span>}
                 </span>
-                <span> - </span>
+                <span>• </span>
                 {details.genres.map((genre, index) => (
                   <span className="inline " key={genre.name}>
                     {genre.name}
                     {index < details.genres.length - 1 ? ', ' : ''}
                   </span>
                 ))}
-                <span> - </span>
+                <span> • </span>
                 <span className="">
                   {details[category.runtime] &&
                     timeConverter(details[category.runtime] || details[category.runtime][0])}
