@@ -3,22 +3,22 @@ import Head from 'next/head';
 import MovieAPI from '../api/MovieAPI';
 import CategoryViewer from '../../components/viewer/CategoryViewer';
 
-function MoviePopularPage({ popularMovies }) {
+function MoviePopularPage({ upcomingMovies }) {
   return (
     <>
       <Head>
-        <title>Popular Movies - NextMovies</title>
+        <title>Upcoming Movies - NextMovies</title>
       </Head>
-      <CategoryViewer results={popularMovies} category="popular" type="Popular" />
+      <CategoryViewer results={upcomingMovies} category="upcoming" type="Upcoming" />
     </>
   );
 }
 
 export async function getServerSideProps({ query }) {
   const { page } = query;
-  const popularMovies = await MovieAPI.getPopularMovies(page);
+  const upcomingMovies = await MovieAPI.getUpcomingMovies(page);
 
-  if (popularMovies === 404) {
+  if (upcomingMovies === 404) {
     return {
       notFound: true,
     };
@@ -26,7 +26,7 @@ export async function getServerSideProps({ query }) {
 
   return {
     props: {
-      popularMovies: popularMovies.data,
+      upcomingMovies: upcomingMovies.data,
     },
   };
 }

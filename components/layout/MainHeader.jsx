@@ -22,12 +22,15 @@ function MainHeader() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="block px-4 py-2 hover:bg-gray-100">
+                <a href="/movie/upcoming" className="block px-4 py-2 hover:bg-gray-100">
                   Upcoming
                 </a>
               </li>
               <li>
-                <a href="#" className="block px-4 py-2 whitespace-nowrap hover:bg-gray-100">
+                <a
+                  href="/movie/toprated"
+                  className="block px-4 py-2 whitespace-nowrap hover:bg-gray-100"
+                >
                   Top Rated
                 </a>
               </li>

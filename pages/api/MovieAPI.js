@@ -20,11 +20,15 @@ const MovieAPI = {
       `${SERVER_BASE_URL}popular?api_key=${process.env.API_KEY}&language=en-US&page=${page}`,
     ),
 
-  getTopRatedMovies: () =>
-    axios.get(`${SERVER_BASE_URL}top_rated?api_key=${process.env.API_KEY}&language=en-US&page=1`),
+  getTopRatedMovies: (page = 1) =>
+    axios.get(
+      `${SERVER_BASE_URL}top_rated?api_key=${process.env.API_KEY}&language=en-US&page=${page}`,
+    ),
 
-  getUpcomingMovies: () =>
-    axios.get(`${SERVER_BASE_URL}upcoming?api_key=${process.env.API_KEY}&language=en-US&page=1`),
+  getUpcomingMovies: (page = 1) =>
+    axios.get(
+      `${SERVER_BASE_URL}upcoming?api_key=${process.env.API_KEY}&language=en-US&page=${page}`,
+    ),
 
   getUpcomingTrailer: (id) =>
     axios.get(`${SERVER_BASE_URL}${id}?api_key=${process.env.API_KEY}&append_to_response=videos`),
