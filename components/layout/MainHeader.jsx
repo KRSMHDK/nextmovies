@@ -40,7 +40,7 @@ function MainHeader() {
       </div>
 
       <div className="relative group">
-        <button className="font-semibold text-white ">Tv Show</button>
+        <button className="font-semibold text-white ">Tv Shows</button>
         <nav className="absolute left-0 z-50 invisible max-w-xl transition-all bg-white border-2 rounded-lg opacity-0 top-full group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-1">
           <ul className="py-1 ">
             <li>

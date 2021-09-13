@@ -91,7 +91,7 @@ function SearchResults({ results, category, type, id }) {
                     <p className="text-sm font-bold cursor-pointer">{movie.title || movie.name}</p>
                   </Link>
                   <p className="mb-4 text-sm font-light">
-                    {dateformat(movie.release_date, 'longDate')}
+                    {dateformat(movie.release_date || movie.first_air_date, 'longDate')}
                   </p>
                 </div>
               </li>
