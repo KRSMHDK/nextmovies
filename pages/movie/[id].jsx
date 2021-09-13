@@ -23,6 +23,7 @@ function MoviePage({ movieDetails, castDetails, recommendations, countryCode }) 
 
 export async function getServerSideProps({ params }) {
   const { id } = params;
+
   const movieDetails = await MovieAPI.getMovieById(id);
   const castDetails = await MovieAPI.getCastByMovieId(id);
   const recommendations = await MovieAPI.getRecommendationByMovieID(id);

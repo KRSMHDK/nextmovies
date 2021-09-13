@@ -11,10 +11,29 @@ function MainHeader() {
           </a>
         </Link>
       </div>
-      <div className="flex items-center flex-grow w-auto text-sm text-white">
-        <Link passHref href="/">
-          <a className="block mr-4 font-semibold">Movies</a>
-        </Link>
+      <div className="p-4">
+        <div className="relative group">
+          <button className="font-semibold text-white ">Movies</button>
+          <nav className="absolute left-0 z-50 invisible max-w-xl transition-all bg-white border-2 rounded-lg opacity-0 top-full group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-1">
+            <ul className="py-1 ">
+              <li>
+                <Link href="/movie/popular">
+                  <a className="block px-4 py-2 hover:bg-gray-100">Popular</a>
+                </Link>
+              </li>
+              <li>
+                <a href="#" className="block px-4 py-2 hover:bg-gray-100">
+                  Upcoming
+                </a>
+              </li>
+              <li>
+                <a href="#" className="block px-4 py-2 whitespace-nowrap hover:bg-gray-100">
+                  Top Rated
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </nav>
   );

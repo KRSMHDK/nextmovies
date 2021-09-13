@@ -48,11 +48,11 @@ function PopularTrailer({ latestTrailer }) {
         className="max-w-screen-xl mx-auto bg-no-repeat "
         style={{
           backgroundImage: `url('https://www.themoviedb.org/t/p/w1920_and_h427_multi_faces_filter(duotone,032541,01b4e4)${bg}')`,
-          transition: '0.6s',
+          transition: '1s',
         }}
       >
         <div className="flex-none ">
-          <p className="pt-5 pb-3 pl-5 text-2xl text-white">Latest Trailers</p>
+          <p className="pt-5 pb-3 pl-5 text-2xl font-bold text-white">Latest Trailers</p>
           <ul className="flex overflow-x-scroll h-72 ">
             {movies.map(
               (movie) =>
@@ -87,7 +87,9 @@ function PopularTrailer({ latestTrailer }) {
                     </div>
 
                     <Link href={`/movie/${movie.id}`}>
-                      <a className="flex-wrap text-center text-white align-center">{movie.title}</a>
+                      <a>
+                        <p className="font-semibold text-center text-white ">{movie.title}</p>
+                      </a>
                     </Link>
                   </li>
                 ),

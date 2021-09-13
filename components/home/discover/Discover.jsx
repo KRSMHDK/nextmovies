@@ -24,7 +24,7 @@ function Discover() {
   }
   return (
     <>
-      <div className="relative z-50 w-full max-w-screen-xl mx-auto h-96 ">
+      <div className="relative z-20 w-full max-w-screen-xl mx-auto h-96 ">
         <Image
           className="bg-cover -z-10"
           layout="fill"

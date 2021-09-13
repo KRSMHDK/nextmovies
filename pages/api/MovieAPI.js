@@ -15,8 +15,10 @@ const MovieAPI = {
       .get(`${SERVER_BASE_URL}${id}/credits?api_key=${process.env.API_KEY}&language=en-US`)
       .catch((err) => err.response.status),
 
-  getPopularMovies: () =>
-    axios.get(`${SERVER_BASE_URL}popular?api_key=${process.env.API_KEY}&language=en-US&page=1`),
+  getPopularMovies: (page = 1) =>
+    axios.get(
+      `${SERVER_BASE_URL}popular?api_key=${process.env.API_KEY}&language=en-US&page=${page}`,
+    ),
 
   getTopRatedMovies: () =>
     axios.get(`${SERVER_BASE_URL}top_rated?api_key=${process.env.API_KEY}&language=en-US&page=1`),
