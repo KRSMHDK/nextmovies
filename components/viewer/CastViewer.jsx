@@ -13,7 +13,7 @@ function CastViewer({ cast }) {
           cast.cast.map((person) => (
             <li
               key={person.name}
-              className="flex-row flex-shrink-0 h-auto pb-2 mr-5 shadow-lg w-36 "
+              className="flex-row flex-shrink-0 h-auto pb-2 mr-5 rounded-lg shadow-lg w-36 "
             >
               <div className="flex-shrink-0">
                 <Link href={`/person/${person.id}`} passHref>

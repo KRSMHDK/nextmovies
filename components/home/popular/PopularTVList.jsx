@@ -53,9 +53,14 @@ function PopulartvList({ tvs }) {
                 }}
               />
             </div>
-            <div className="w-40 pt-5 overflow-wrap">
-              <p className="pl-2 text-sm font-bold text-black">{tv.name}</p>
-              <p className="pb-4 pl-2 text-sm font-light text-gray-600">
+            <div className="w-40 pt-5 pl-2 overflow-wrap">
+              <Link href={`/tv/${tv.id}`} passHref>
+                <a>
+                  <p className="text-sm font-bold text-black  hover:text-gray-500">{tv.name}</p>
+                </a>
+              </Link>
+
+              <p className="pb-4 text-sm font-light text-gray-600">
                 {dateformat(tv.first_air_date, 'mediumDate')}
               </p>
             </div>
