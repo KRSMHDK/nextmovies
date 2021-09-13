@@ -32,7 +32,7 @@ function ItemViewer({ details, countryCode, type }) {
 
   return (
     <div>
-      <div className="relative z-50 mx-auto">
+      <div className="relative z-10 mx-auto">
         <Image
           className="-z-10"
           layout="fill"
