@@ -20,7 +20,7 @@ function SearchResults({ results, category, type, id }) {
   return (
     <div className="container px-10 py-10 mx-auto">
       <p className="text-2xl font-bold"> {type}</p>
-      <div className="flex-row md:flex ">
+      <div className="flex-row sm:flex ">
         <form>
           <div className="pt-5 pr-5">
             <p className="h-auto px-4 py-2 mb-2 font-semibold text-left border-2 rounded-lg shadow-md text-md md:w-60">
@@ -38,17 +38,17 @@ function SearchResults({ results, category, type, id }) {
           </button>
         </form>
         <div>
-          <ul className="grid grid-cols-1 gap-5 px-5 pt-5 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
+          <ul className="flex-row gap-5 px-5 pt-5 sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {results.results.map((movie) => (
               <li
-                className="min-h-0 mb-5 border-2 border-transparent rounded-lg shadow-md w-44 "
+                className="flex flex-shrink-0 min-h-0 mb-5 border-2 border-transparent rounded-lg shadow-md sm:w-auto "
                 key={movie.id}
               >
-                <div className="relative">
+                <div className="relative flex-shrink-0 w-24 sm:h-auto sm:w-auto h-36 ">
                   <Link href={`/${id}/${movie.id}`}>
                     <a>
                       <Image
-                        className="rounded-t-lg cursor-pointer"
+                        className="rounded-t-lg cursor-pointer "
                         height={273}
                         width={180}
                         unoptimized={true}
@@ -61,8 +61,9 @@ function SearchResults({ results, category, type, id }) {
                       />
                     </a>
                   </Link>
+
                   <CircularProgressbar
-                    className="absolute h-11 -bottom-4 -left-14"
+                    className="absolute hidden sm:block h-11 bottom-16 -left-16"
                     background
                     strokeWidth={7}
                     backgroundPadding={6}
@@ -85,13 +86,28 @@ function SearchResults({ results, category, type, id }) {
                       },
                     }}
                   />
+                  <div className="hidden pt-6 mb-2 ml-2 sm:block">
+                    <Link href={`/${id}/${movie.id}`}>
+                      <p className="text-sm font-bold cursor-pointer hover:text-gray-500">
+                        {movie.title || movie.name}
+                      </p>
+                    </Link>
+                    <p className="mb-4 text-sm font-light">
+                      {dateformat(movie.release_date || movie.first_air_date, 'longDate')}
+                    </p>
+                  </div>
                 </div>
-                <div className="pt-6 ml-4">
+                <div className="pt-6 mb-2 ml-4 sm:hidden ">
                   <Link href={`/${id}/${movie.id}`}>
-                    <p className="text-sm font-bold cursor-pointer">{movie.title || movie.name}</p>
+                    <p className="text-sm font-bold cursor-pointer hover:text-gray-500">
+                      {movie.title || movie.name}
+                    </p>
                   </Link>
                   <p className="mb-4 text-sm font-light">
                     {dateformat(movie.release_date || movie.first_air_date, 'longDate')}
+                  </p>
+                  <p className="w-full max-h-full text-sm sm:hidden line-clamp-2">
+                    {movie.overview}
                   </p>
                 </div>
               </li>

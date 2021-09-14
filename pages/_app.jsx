@@ -4,7 +4,7 @@ import Layout from '../components/layout/Layout';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className="bg-white ">
+    <div className="bg-white font-roboto">
       <Layout>
         <Component {...pageProps} />
       </Layout>
