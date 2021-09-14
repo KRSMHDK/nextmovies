@@ -54,7 +54,7 @@ function SearchResults({ results, searchQuery }) {
               </div>
               <div className="pt-6 ml-4">
                 <Link href={`/movie/${movie.id}`} passHref>
-                  <p className="font-bold cursor-pointer text-md">{movie.title}</p>
+                  <a className="font-bold cursor-pointer text-md">{movie.title}</a>
                 </Link>
                 <p className="mb-4 text-sm font-light">
                   {dateformat(movie.release_date, 'longDate')}

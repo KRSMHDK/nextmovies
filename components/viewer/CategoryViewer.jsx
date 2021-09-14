@@ -49,7 +49,7 @@ function SearchResults({ results, category, type, id }) {
                   <Link href={`/${id}/${movie.id}`}>
                     <a>
                       <Image
-                        className="rounded-t-lg rounded-bl-lg cursor-pointer sm:rounded-bl-none "
+                        className="rounded-tl-lg rounded-bl-lg cursor-pointer sm:rounded-r-lg sm:rounded-bl-none "
                         height={273}
                         width={180}
                         unoptimized={true}

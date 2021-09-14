@@ -14,6 +14,12 @@ module.exports = {
       colors: {
         header: '#032541',
       },
+      lineClamp: {
+        7: '7',
+        8: '8',
+        9: '9',
+        15: '15',
+      },
       padding: {
         'p-60%': '60%',
       },
