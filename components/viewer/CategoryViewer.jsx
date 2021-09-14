@@ -19,7 +19,7 @@ function SearchResults({ results, category, type, id }) {
   };
 
   return (
-    <div className="container px-10 py-10 mx-auto">
+    <div className="container px-5 py-10 mx-auto sm:px-10">
       <p className="text-2xl font-bold"> {type}</p>
       <div className="flex-row sm:flex ">
         <form>
@@ -39,7 +39,7 @@ function SearchResults({ results, category, type, id }) {
           </button>
         </form>
         <div>
-          <ul className="gap-5 px-5 pt-5 sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          <ul className="gap-5 pt-5 sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {results.results.map((movie) => (
               <li
                 className="flex flex-shrink-0 mb-5 border-2 border-transparent rounded-lg shadow-md sm:flex-col sm:w-44"
