@@ -5,6 +5,7 @@ import Image from 'next/image';
 import timeConverter from '../../lib/utils/timeConverter';
 import dateformat from 'dateformat';
 import rating from '../../lib/utils/rating';
+import colorScore from '../../lib/utils/colorscore';
 
 function ItemViewer({ details, countryCode, type }) {
   const movie = {
@@ -101,7 +102,7 @@ function ItemViewer({ details, countryCode, type }) {
                   text={`${details.vote_average * 10}%`}
                   styles={{
                     path: {
-                      stroke: `${details.vote_average > 7 ? '#13e451' : '#f0bb0e'}`,
+                      stroke: colorScore(details.vote_average),
                       strokeLinecap: 'butt',
                     },
                     trail: {

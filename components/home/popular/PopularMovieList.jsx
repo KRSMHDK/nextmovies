@@ -5,6 +5,7 @@ import Image from 'next/image';
 import dateformat from 'dateformat';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import colorScore from '../../../lib/utils/colorscore';
 
 function PopularMovieList({ movies }) {
   return (
@@ -36,7 +37,7 @@ function PopularMovieList({ movies }) {
                 text={`${movie.vote_average * 10}%`}
                 styles={{
                   path: {
-                    stroke: `${movie.vote_average > 7 ? '#13e451' : '#f0bb0e'}`,
+                    stroke: colorScore(movie.vote_average),
                     strokeLinecap: 'butt',
                   },
                   trail: {

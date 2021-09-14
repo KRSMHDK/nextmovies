@@ -5,6 +5,7 @@ import Image from 'next/image';
 import dateformat from 'dateformat';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import colorScore from '../../../lib/utils/colorscore';
 
 function PopulartvList({ tvs }) {
   return (
@@ -37,7 +38,7 @@ function PopulartvList({ tvs }) {
                 text={`${tv.vote_average * 10}%`}
                 styles={{
                   path: {
-                    stroke: `${tv.vote_average > 7 ? '#13e451' : '#f0bb0e'}`,
+                    stroke: colorScore(tv.vote_average),
                     strokeLinecap: 'butt',
                   },
                   trail: {
@@ -56,7 +57,7 @@ function PopulartvList({ tvs }) {
             <div className="w-40 pt-5 pl-2 overflow-wrap">
               <Link href={`/tv/${tv.id}`} passHref>
                 <a>
-                  <p className="text-sm font-bold text-black  hover:text-gray-500">{tv.name}</p>
+                  <p className="text-sm font-bold text-black hover:text-gray-500">{tv.name}</p>
                 </a>
               </Link>
 
