@@ -42,7 +42,7 @@ function ItemViewer({ details, countryCode, type }) {
         objectPosition="top"
       />
       <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-      <div className="relative h-auto max-w-screen-xl mx-auto pt-14 pb-14 ">
+      <div className="relative h-auto max-w-screen-xl py-10 mx-auto px-7 ">
         <div className="relative flex flex-col text-white sm:flex-row">
           <img
             className="z-20 w-48 mx-auto border-black rounded-lg sm:w-300px sm:h-450px"
@@ -119,7 +119,7 @@ function ItemViewer({ details, countryCode, type }) {
 
               <span className="w-20 pl-1 m-auto font-bold "> User Score</span>
             </div>
-            <p className="mt-4 mb-3 text-2xl">Overview</p>
+            <p className="mt-4 mb-3 text-xl">Overview</p>
             <p className="">{details.overview}</p>
           </div>
         </div>
