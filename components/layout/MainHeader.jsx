@@ -26,7 +26,7 @@ function MainHeader() {
     <div className={` -z-50  flex flex-wrap items-center w-full h-16    bg-header`}>
       <nav
         className={`fixed z-50  flex transition-all duration-500 flex-wrap items-center w-full h-16   md:pl-80 bg-header  ${
-          scrollY > 150 ? '-top-60' : 'top-0'
+          scrollY > 70 ? '-top-60' : 'top-0'
         }`}
       >
         {console.log(scrollY)}
