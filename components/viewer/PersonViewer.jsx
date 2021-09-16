@@ -8,19 +8,18 @@ function PersonViewer({ person }) {
   const sortedPopularity = person.combined_credits.cast.sort((a, b) => b.popularity - a.popularity);
 
   return (
-    <div className="container px-20 py-10 mx-auto">
-      <div className="flex">
-        <div className="flex-shrink-0 ">
-          <section>
+    <div className="container px-10 py-10 mx-auto sm:px-20">
+      <div className="flex-row items-center">
+        <div className="flex-row items-center flex-shrink-0 ">
+          <section className="relative flex-row items-center w-48 h-60">
             <Image
               className="rounded-lg"
               unoptimized={true}
-              width={300}
-              height={450}
+              layout="fill"
               src={`https://www.themoviedb.org/t/p/w300_and_h450_bestv2${person.profile_path}`}
             />
           </section>
-          <section>
+          <section className="flex-row items-center ">
             <h2 className="mt-2 mb-3 text-xl font-bold">Personal Info</h2>
             <p className="font-bold">Known For</p>
             <p>{person.known_for_department}</p>
