@@ -29,7 +29,7 @@ function PersonViewer({ person }) {
             />
           </section>
           <section>
-            <h1 className="pl-4 mx-auto font-semibold text-md w-150px sm:hidden">{person.name} </h1>
+            <h1 className="font-semibold text-center w- text-md sm:hidden">{person.name} </h1>
           </section>
           <section className="w-195px">
             <h2 className="mt-2 mb-3 text-xl font-bold">Personal Info</h2>
