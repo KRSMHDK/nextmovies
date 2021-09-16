@@ -9,9 +9,9 @@ function PersonViewer({ person }) {
 
   return (
     <div className="container px-10 py-10 mx-auto sm:px-20">
-      <div className="flex-row ">
-        <div className="flex-row flex-shrink-0 pl-32 ">
-          <section className="relative flex-row w-44 h-60">
+      <div className="flex-row sm:flex ">
+        <div className="flex-shrink-0 ">
+          <section className="relative h-150px w-150px sm:w-44 sm:h-60">
             <Image
               className="rounded-lg "
               unoptimized={true}
@@ -19,7 +19,7 @@ function PersonViewer({ person }) {
               src={`https://www.themoviedb.org/t/p/w300_and_h450_bestv2${person.profile_path}`}
             />
           </section>
-          <section className="flex-row ">
+          <section className="w-195px">
             <h2 className="mt-2 mb-3 text-xl font-bold">Personal Info</h2>
             <p className="font-bold">Known For</p>
             <p>{person.known_for_department}</p>
@@ -50,35 +50,39 @@ function PersonViewer({ person }) {
             <p>{person.place_of_birth}</p>
           </section>
         </div>
-        <div className="pl-7">
+        <div className="sm:pl-7">
           <section>
-            <h1 className="text-3xl font-semibold ">{person.name} </h1>
+            <h1 className="hidden text-3xl font-semibold sm:block ">{person.name} </h1>
           </section>
           <section className="mt-6">
             <h2 className="mb-3 text-xl font-semibold">Biography</h2>
-            <p className="line-clamp-15">{person.biography}</p>
+            <p className="line-clamp-15">
+              {person.biography
+                ? person.biography
+                : `We don't have a biography for ${person.name}.`}
+            </p>
           </section>
           <section className="mt-6">
             <h2 className="mb-3 text-xl font-semibold">Known For</h2>
           </section>
-          <section className="max-w-screen-lg mx-auto mt-5">
+          <section className="max-w-screen-xl mx-auto mt-5">
             <ul className="flex overflow-x-scroll ">
               {sortedPopularity.map((mv) => (
-                <li key={mv.id} className="flex-none ml-2 ">
-                  <div className="relative ">
+                <li key={mv.id} className="flex ">
+                  <div className="mx-auto ">
                     <Link href={`/${mv.media_type}/${mv.id}`} passHref>
-                      <a>
+                      <a className="pl-5 ">
                         <Image
                           unoptimized={true}
-                          className="relative border rounded-lg cursor-pointer "
+                          className="mx-auto border rounded-lg cursor-pointer "
                           src={
                             mv.poster_path === null
                               ? 'https://via.placeholder.com/273x180?text=No+Image'
-                              : `https://image.tmdb.org/t/p/w500${mv.poster_path}`
+                              : `https://www.themoviedb.org/t/p/w150_and_h225_bestv2${mv.poster_path}`
                           }
                           alt={mv.title || mv.name}
-                          width={150}
-                          height={224}
+                          width={130}
+                          height={195}
                           placeholder="blur"
                           blurDataURL="/images/blur.png"
                         />

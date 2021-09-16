@@ -7,7 +7,7 @@ function Recommendations({ recommendations, type }) {
   return (
     <div className="h-auto max-w-screen-xl pt-5 pl-5 mx-auto mt-2 border-t-2 ">
       <h1 className="text-xl font-bold">Recommendations</h1>
-      <ul className="flex flex-shrink-0 mt-3 overflow-x-auto rounded-xl">
+      <ul className="flex flex-shrink-0 mt-3 overflow-x-auto ">
         {recommendations.results.length === 0 ? (
           <p>We don&apos;t have enough data to suggest any {type}s. </p>
         ) : (
@@ -17,7 +17,7 @@ function Recommendations({ recommendations, type }) {
                 <Link className="flex-shrink-0 " href={`/${type}/${rec.id}`}>
                   <a>
                     <Image
-                      className="mx-auto cursor-pointer"
+                      className="mx-auto rounded-lg cursor-pointer"
                       placeholder="blur"
                       unoptimized={true}
                       blurDataURL="/images/blur.png"
