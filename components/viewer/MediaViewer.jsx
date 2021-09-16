@@ -82,7 +82,7 @@ function MediaViewer({ details }) {
               }`}
             >
               <Image
-                className="mx-auto "
+                className="mx-auto transition-all duration-100"
                 placeholder="blur"
                 unoptimized={true}
                 blurDataURL="/images/blur.png"

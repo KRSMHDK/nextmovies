@@ -19,7 +19,7 @@ function CastViewer({ cast }) {
                 <Link href={`/person/${person.id}`} passHref>
                   <a>
                     <Image
-                      className="mx-auto rounded-t-xl"
+                      className="mx-auto transition-all duration-100 rounded-t-xl"
                       unoptimized={true}
                       width={138}
                       height={175}
