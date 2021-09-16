@@ -38,7 +38,7 @@ function CastViewer({ cast }) {
               <div>
                 <Link href={`/person/${person.id}`} passHref>
                   <a>
-                    <p className="pl-2 text-sm font-bold text-left hover:text-gray-500">
+                    <p className="pl-2 text-sm font-bold text-left hover:text-blue-500">
                       {person.name}
                     </p>
                   </a>

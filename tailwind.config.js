@@ -11,6 +11,7 @@ module.exports = {
         '195px': '195px',
         '220px': '220px',
         '250px': '250px',
+        '300px': '300px',
         '533px': '533px',
       },
       height: {
@@ -19,9 +20,11 @@ module.exports = {
         '195px': '195px',
         '300px': '300px',
         '330px': '330px',
+        '450px': '450px',
+        '500px': '500px',
       },
       fontFamily: {
-        roboto: ['Roboto', 'sans-serif'],
+        ssp: ['Source Sans Pro', 'sans-serif'],
       },
       zIndex: {
         '-10': '-10',

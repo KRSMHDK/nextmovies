@@ -10,14 +10,26 @@ function PersonViewer({ person }) {
   return (
     <div className="container px-10 py-10 mx-auto sm:px-20">
       <div className="flex-row sm:flex ">
-        <div className="flex-shrink-0 ">
-          <section className="relative h-150px w-150px sm:w-44 sm:h-60">
+        <div>
+          <section className="relative mx-auto sm:hidden sm:mx-0 h-150px w-150px sm:w-44 sm:h-60">
             <Image
               className="rounded-lg "
               unoptimized={true}
               layout="fill"
+              src={`https://www.themoviedb.org/t/p/w150_and_h150_bestv2${person.profile_path}`}
+            />
+          </section>
+          <section className="relative hidden mx-auto sm:block sm:mx-0 ">
+            <Image
+              className="rounded-lg "
+              unoptimized={true}
+              width={300}
+              height={450}
               src={`https://www.themoviedb.org/t/p/w300_and_h450_bestv2${person.profile_path}`}
             />
+          </section>
+          <section>
+            <h1 className="pl-4 mx-auto font-semibold text-md w-150px sm:hidden">{person.name} </h1>
           </section>
           <section className="w-195px">
             <h2 className="mt-2 mb-3 text-xl font-bold">Personal Info</h2>
@@ -29,8 +41,8 @@ function PersonViewer({ person }) {
             <p>{person.gender === 1 ? 'Female' : 'Male'}</p>
             <p className="mt-2 font-bold">Birthday</p>
             <p>
-              {person.birthday}{' '}
-              {person.deathday == null ? (
+              {person.birthday ? person.birthday : '-'}{' '}
+              {person.deathday == null && person.birthday != null ? (
                 <span>({differenceInYears(new Date(), new Date(person.birthday))} years old)</span>
               ) : (
                 <span></span>
@@ -47,14 +59,14 @@ function PersonViewer({ person }) {
               </div>
             )}
             <p className="mt-2 font-bold">Place of Birth</p>
-            <p>{person.place_of_birth}</p>
+            <p>{person.place_of_birth ? person.place_of_birth : '-'}</p>
           </section>
         </div>
         <div className="sm:pl-7">
           <section>
             <h1 className="hidden text-3xl font-semibold sm:block ">{person.name} </h1>
           </section>
-          <section className="mt-6">
+          <section className="max-w-screen-lg mt-6">
             <h2 className="mb-3 text-xl font-semibold">Biography</h2>
             <p className="line-clamp-15">
               {person.biography
@@ -65,7 +77,7 @@ function PersonViewer({ person }) {
           <section className="mt-6">
             <h2 className="mb-3 text-xl font-semibold">Known For</h2>
           </section>
-          <section className="max-w-screen-xl mx-auto mt-5">
+          <section className="max-w-screen-lg mx-auto mt-5">
             <ul className="flex overflow-x-scroll ">
               {sortedPopularity.map((mv) => (
                 <li key={mv.id} className="flex ">
