@@ -4,6 +4,17 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      width: {
+        '94px': '94px',
+        '220px': '220px',
+        '250px': '250px',
+        '533px': '533px',
+      },
+      height: {
+        '141px': '141px',
+        '300px': '300px',
+        '330px': '330px',
+      },
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],
       },

@@ -6,15 +6,11 @@ function MediaViewer({ details }) {
   const backdrops = {
     type: 'backdrops',
     path: 'file_path',
-    width: 533,
-    height: 300,
     img_path: 'https://www.themoviedb.org/t/p/w533_and_h300_bestv2',
   };
   const posters = {
     type: 'posters',
     path: 'file_path',
-    width: 200,
-    height: 300,
     img_path: 'https://www.themoviedb.org/t/p/w220_and_h330_face',
   };
 
@@ -72,19 +68,25 @@ function MediaViewer({ details }) {
         </Tab.List>
       </Tab.Group>
 
-      <ul className="flex mt-3 mb-6 overflow-x-auto rounded-xl">
+      <ul className="flex mt-3 mb-6 overflow-x-auto ">
         {details.images[selectedType.type].length === 0 ? (
           <div>No Backdrops Found </div>
         ) : (
           details.images[selectedType.type].map((item) => (
-            <li key={item[selectedType.path]} className="flex-shrink-0 ">
+            <li
+              key={item[selectedType.path]}
+              className={`relative flex-shrink-0 ${
+                selectedType.type === 'backdrops'
+                  ? `w-250px h-141px sm:w-533px sm:h-300px`
+                  : `w-94px h-141px sm:w-220px sm; h-330px`
+              }`}
+            >
               <Image
                 className="mx-auto "
                 placeholder="blur"
                 unoptimized={true}
                 blurDataURL="/images/blur.png"
-                width={selectedType.width}
-                height={selectedType.height}
+                layout="fill"
                 src={`${selectedType.img_path}${item[selectedType.path]}`}
               />
             </li>
