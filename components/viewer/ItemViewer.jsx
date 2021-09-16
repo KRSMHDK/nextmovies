@@ -39,7 +39,6 @@ function ItemViewer({ details, countryCode, type }) {
         unoptimized={true}
         src={`https://image.tmdb.org/t/p/w1280${details.backdrop_path}`}
         objectFit="cover"
-        objectPosition="top"
       />
       <div className="absolute inset-0 bg-black bg-opacity-70"></div>
       <div className="relative h-auto max-w-screen-xl py-10 mx-auto px-7 ">
