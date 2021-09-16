@@ -78,7 +78,7 @@ function MediaViewer({ details }) {
               className={`relative flex-shrink-0 ${
                 selectedType.type === 'backdrops'
                   ? `w-250px h-141px sm:w-533px sm:h-300px`
-                  : `w-94px h-141px sm:w-220px sm; h-330px`
+                  : `w-94px h-141px sm:w-220px sm:h-330px`
               }`}
             >
               <Image
