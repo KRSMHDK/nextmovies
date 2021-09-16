@@ -9,27 +9,21 @@ function MainHeader() {
       setScrollY(window.scrollY);
     };
 
-    // just trigger this so that the initial state
-    // is updated as soon as the component is mounted
-    // related: https://stackoverflow.com/a/63408216
     handleScroll();
 
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className={` -z-50  flex flex-wrap items-center w-full h-16    bg-header`}>
       <nav
-        className={`fixed z-50  flex transition-all duration-500 flex-wrap items-center w-full h-16   md:pl-80 bg-header  ${
-          scrollY > 70 ? '-top-60' : 'top-0'
+        className={`fixed z-50  flex transition-all duration-500 flex-wrap items-center w-full h-16 pl-5  md:pl-80 bg-header  ${
+          scrollY > 90 ? '-top-60' : 'top-0'
         }`}
       >
-        {console.log(scrollY)}
         <div className="flex mr-6 ">
           <Link passHref href="/">
             <a className="text-4xl font-bold tracking-wider text-transparent to-green-600 bg-clip-text bg-gradient-to-r from-blue-500">
