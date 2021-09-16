@@ -9,10 +9,10 @@ function Discover() {
 
   useEffect(() => {
     const bgImageRoll = {
-      0: '/6t8ES1d12OzWyCGxBeDYLHoaDrT.jpg',
-      1: '/yY76zq9XSuJ4nWyPDuwkdV7Wt0c.jpg',
-      2: '/zqkmTXzjkAgXmEWLRsY4UpTWCeo.jpg',
-      3: '/nNmJRkg8wWnRmzQDe2FwKbPIsJV.jpg',
+      0: '/6t8ES1d12OzWyCGxBeDYLHoaDrT.jpg', // rogue one
+      1: '/yY76zq9XSuJ4nWyPDuwkdV7Wt0c.jpg', // tenet
+      2: '/yHtB4KHNigx3ZoxDvQbW2SOXGfq.jpg', // wolfwalkers
+      3: '/u5Fp9GBy9W8fqkuGfLBuuoJf57Z.jpg', // no time to die
     };
     const picker = Math.floor(Math.random() * 4);
     setBgImage(bgImageRoll[picker]);

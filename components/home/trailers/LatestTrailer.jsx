@@ -77,7 +77,7 @@ function PopularTrailer({ latestTrailer }) {
                       className="relative duration-300 cursor-pointer hover:scale-105"
                     >
                       <Image
-                        className="rounded-lg "
+                        className="transition-all duration-500 rounded-lg "
                         src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
                         alt=""
                         height={192}

@@ -31,7 +31,7 @@ function PopulartvList({ tvs }) {
                 <a>
                   <Image
                     unoptimized={true}
-                    className="relative border rounded-lg cursor-pointer "
+                    className="relative transition-all duration-500 border rounded-lg cursor-pointer "
                     src={`https://image.tmdb.org/t/p/w500${tv.poster_path}`}
                     alt={tv.name}
                     width={150}
