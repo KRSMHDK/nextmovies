@@ -87,7 +87,7 @@ function ItemViewer({ details, countryCode, type }) {
                 <span> • </span>
                 <span className="">
                   {details[category.runtime] &&
-                    timeConverter(details[category.runtime] || details[category.runtime][0])}
+                    timeConverter(details[category.runtime][0] || details[category.runtime])}
                 </span>
               </div>
 

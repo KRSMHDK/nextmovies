@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import dateformat from 'dateformat';
@@ -8,10 +7,23 @@ import 'react-circular-progressbar/dist/styles.css';
 import colorScore from '../../../lib/utils/colorscore';
 
 function PopulartvList({ tvs }) {
+  const [fadingScroll, setFadingScroll] = useState(0);
   return (
-    <div className="max-w-screen-xl mx-auto mt-5">
-      <h1 className="mb-4 ml-4 text-2xl text-black whitespace-nowrap">Popular Tv Series</h1>
-      <ul className="flex overflow-x-scroll ">
+    <div className="relative max-w-screen-xl mx-auto mt-5">
+      <div
+        className={`
+             duration-200 transition-all absolute top-0 right-0 z-50 h-full  w-14   ${
+               fadingScroll > 75 ? 'bg-transparent' : 'bg-gradient-to-r from-transparent to-white'
+             }`}
+      ></div>
+      <h1 className="mb-4 ml-4 text-2xl font-semibold text-black whitespace-nowrap">
+        Popular Tv Series
+      </h1>
+
+      <ul
+        className="flex overflow-x-scroll "
+        onScroll={(e) => setFadingScroll(e.target.scrollLeft)}
+      >
         {tvs.results.map((tv) => (
           <li key={tv.id} className="flex-none ml-2 ">
             <div className="relative">

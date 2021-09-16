@@ -9,7 +9,7 @@ import colorScore from '../../../lib/utils/colorscore';
 
 function PopularMovieList({ movies }) {
   const [fadingScroll, setFadingScroll] = useState(0);
-  console.log(fadingScroll);
+
   return (
     <div className="relative max-w-screen-xl mx-auto mt-5 ">
       <div
@@ -24,11 +24,11 @@ function PopularMovieList({ movies }) {
       >
         {movies.results.map((movie) => (
           <li key={movie.id} className="flex-none ml-2 ">
-            <div className="relative">
+            <div className="relative ">
               <Link href={`/movie/${movie.id}`} passHref>
                 <a>
                   <Image
-                    className="relative border rounded-lg cursor-pointer"
+                    className="relative transition-all duration-500 border rounded-lg cursor-pointer"
                     unoptimized={true}
                     src={`https://www.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`}
                     alt={movie.title}

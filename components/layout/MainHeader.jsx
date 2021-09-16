@@ -20,7 +20,7 @@ function MainHeader() {
   return (
     <div className={` -z-50  flex flex-wrap items-center w-full h-16    bg-header`}>
       <nav
-        className={`fixed z-50  flex transition-all duration-500 flex-wrap items-center w-full h-16 pl-5  md:pl-80 bg-header  ${
+        className={`fixed z-50  flex transition-all duration-700 flex-wrap items-center w-full h-16 pl-5  md:pl-80 bg-header  ${
           scrollY > 90 ? '-top-60' : 'top-0'
         }`}
       >

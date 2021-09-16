@@ -14,7 +14,7 @@ function PopularTrailer({ latestTrailer }) {
     setOpen(true);
   };
   const onCloseModal = () => setOpen(false);
-
+  const [fadingScroll, setFadingScroll] = useState(0);
   return (
     <div>
       <Modal
@@ -45,15 +45,24 @@ function PopularTrailer({ latestTrailer }) {
         />
       </Modal>
       <div
-        className="max-w-screen-xl mx-auto bg-no-repeat "
+        className="relative max-w-screen-xl mx-auto bg-no-repeat "
         style={{
           backgroundImage: `url('https://www.themoviedb.org/t/p/w1920_and_h427_multi_faces_filter(duotone,032541,01b4e4)${bg}')`,
           transition: '1s',
         }}
       >
+        <div
+          className={`
+             duration-200 transition-all absolute top-0 right-0 z-50 h-full  w-14   ${
+               fadingScroll > 75 ? 'bg-transparent' : 'bg-gradient-to-r from-transparent to-white'
+             }`}
+        ></div>
         <div className="flex-none ">
           <p className="pt-5 pb-3 pl-5 text-2xl font-bold text-white">Latest Trailers</p>
-          <ul className="flex overflow-x-scroll h-72 ">
+          <ul
+            className="flex overflow-x-scroll h-72 "
+            onScroll={(e) => setFadingScroll(e.target.scrollLeft)}
+          >
             {movies.map(
               (movie) =>
                 movie.videos.results[0] !== undefined && (

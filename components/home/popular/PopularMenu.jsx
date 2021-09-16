@@ -9,7 +9,7 @@ function PopularMenu({ popularMovies, upcomingMovies, topRatedMovies }) {
   return (
     <>
       <div className="relative inline-block max-w-screen-xl pl-5 mx-auto mt-5 group md:flex pr-14">
-        <h1 className="text-2xl text-black bold whitespace-nowrap">What&apos;s Popular</h1>
+        <h1 className="text-2xl font-semibold text-black whitespace-nowrap">What&apos;s Popular</h1>
         <Tab.Group>
           <Tab.List className="flex gap-2 ml-5">
             <Tab as={Fragment}>

@@ -9,17 +9,17 @@ function PersonViewer({ person }) {
 
   return (
     <div className="container px-10 py-10 mx-auto sm:px-20">
-      <div className="flex-row items-center">
-        <div className="flex-row items-center flex-shrink-0 ">
-          <section className="relative flex-row items-center w-48 h-60">
+      <div className="flex-row ">
+        <div className="flex-row flex-shrink-0 pl-32 ">
+          <section className="relative flex-row w-44 h-60">
             <Image
-              className="rounded-lg"
+              className="rounded-lg "
               unoptimized={true}
               layout="fill"
               src={`https://www.themoviedb.org/t/p/w300_and_h450_bestv2${person.profile_path}`}
             />
           </section>
-          <section className="flex-row items-center ">
+          <section className="flex-row ">
             <h2 className="mt-2 mb-3 text-xl font-bold">Personal Info</h2>
             <p className="font-bold">Known For</p>
             <p>{person.known_for_department}</p>
