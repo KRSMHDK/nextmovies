@@ -30,7 +30,7 @@ function MainHeader() {
       >
         <div className="container mx-auto">
           <nav
-            className={`fixed z-50  flex transition-all duration-700 flex-wrap items-center w-full h-16 pl-5  bg-header  ${
+            className={`fixed z-50  flex transition-all duration-700 flex-wrap items-center w-full h-16 pl-5  md:px-36 bg-header  ${
               scrollY > 90 ? '-top-60' : 'top-0'
             }`}
           >
