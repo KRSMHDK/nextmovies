@@ -46,7 +46,7 @@ function Discover() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search for a movie"
+              placeholder="Search for a movie, tv show, person......"
             />
             <button
               type="submit"
