@@ -54,7 +54,7 @@ function ItemViewer({ details, countryCode, type }) {
           />
 
           <div className="pl-5 pr-5 mx-auto mt-5 text-white ">
-            <p className="text-2xl font-semibold text-center sm:text-4xl sm:text-left">
+            <p className="text-2xl font-bold text-center sm:text-4xl sm:text-left">
               {details[category.title]}{' '}
               <span className="font-light">
                 {details[category.release_date] &&
@@ -64,9 +64,9 @@ function ItemViewer({ details, countryCode, type }) {
               </span>
             </p>
 
-            <div className="mt-10 text-sm sm:mt-2">
+            <div className="mt-10 sm:mt-2">
               {certification && (
-                <span className="px-1 py-1 mr-1 text-xs text-gray-300 border-2 border-gray-300 ">
+                <span className="px-1 py-1 mr-1 text-sm text-gray-300 border-2 border-gray-300 ">
                   {certification}{' '}
                 </span>
               )}
