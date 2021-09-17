@@ -60,7 +60,6 @@ function SearchResults({ display, type, searchQuery, leftMenu, pageTotal }) {
 
   return (
     <div className="h-auto max-w-screen-xl pt-5 pl-5 mx-auto">
-      {console.log(category)}
       <div className="flex-row md:flex">
         <div>
           <div className="border ">
